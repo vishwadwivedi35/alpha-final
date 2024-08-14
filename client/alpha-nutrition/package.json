@@ -1,0 +1,59 @@
+{
+  "name": "alpha-nutrition",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.7.2",
+    "firebase": "^10.12.4",
+    "live-server": "^1.2.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.25.1",
+    "react-scripts": "5.0.1",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "watch:sass": "node-sass sass/main.scss css/index.css -w",
+    "devserver": "live-server",
+    "go": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "node-sass sass/main.scss css/index.comp.css",
+    "concat:css": "concat -o css/index.concat.css css/icon-font.css css/index.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/index.comp.css -o css/index.prefix.css",
+    "compress:css": "node-sass css/index.prefix.css css/index.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "node-sass": "^7.0.3",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^11.0.0",
+    "scss-concat": "^0.3.9"
+  }
+}

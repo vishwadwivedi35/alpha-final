@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "id": 3,
+      "name": "Biozyme Daily Multivitamins",
+      "description": "90 tablets 5-in-1 Supplement",
+      "price": 899,
+      "images": [
+        "https://img10.hkrtcdn.com/33253/prd_3325249_c_m.jpg",
+        "https://img8.hkrtcdn.com/31845/prd_3184497-MuscleBlaze-Biozyme-Daily-Multivitamin-90-tablets-5in1-Supplement-with-Vitamins-Minerals-Joint-TBooster-Blend-EAF_o.jpg",
+        "https://img6.hkrtcdn.com/31845/prd_3184495-MuscleBlaze-Biozyme-Daily-Multivitamin-90-tablets-5in1-Supplement-with-Vitamins-Minerals-Joint-TBooster-Blend-EAF_o.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "CreAmp Creatine Monohydrate",
+      "description": "0.88LB Unflavoured",
+      "price": 1399,
+      "images": [
+        "https://img8.hkrtcdn.com/32169/prd_3216827-MuscleBlaze-Creatine-Monohydrate-0.88-lb-Unflavoured_c_m.jpg",
+        "https://img8.hkrtcdn.com/32169/prd_3216817-MuscleBlaze-Creatine-Monohydrate-0.55-lb-Unflavoured_o.jpg",
+        "https://img10.hkrtcdn.com/32169/prd_3216819-MuscleBlaze-Creatine-Monohydrate-0.55-lb-Unflavoured_o.jpg"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Muscleblaze Biozyme Whey",
+      "description": "4.4lb Kesar Khulfi",
+      "price": 4699,
+      "images": [
+        "https://img8.hkrtcdn.com/34083/prd_3408227-MuscleBlaze-Biozyme-Performance-Whey-4.4-lb-Kesar-Kulfi_c_m.jpg",
+        "https://img6.hkrtcdn.com/34129/prd_3412835-MuscleBlaze-Biozyme-Performance-Whey-4.4-lb-Kesar-Kulfi_o.jpg",
+        "https://img2.hkrtcdn.com/34129/prd_3412841_o.jpg"
+      ]
+    },
+    {
+      "name": "New Product",
+      "description": "Description of the new product",
+      "price": 99,
+      "images": ["image1.jpg", "image2.jpg"],
+      "id": 7
+    }
+  ]
+}

@@ -118,22 +118,23 @@ const Navigation = () => {
       <nav className="navigation__nav">
         <ol className="navigation__list">
           <li className="navigation__item">
-            <Link to="/shop" className="navigation__link" onClick={closeNav}>
-              <span>1</span>All Products
+            <Link to="/" className="navigation__link" onClick={closeNav}>
+              <span>&#8226;</span>Home
             </Link>
           </li>
           <li className="navigation__item">
-            <Link to="/" className="navigation__link" onClick={closeNav}>
-              <span>2</span>Home
+            <Link to="/shop" className="navigation__link" onClick={closeNav}>
+              <span>&#8226;</span>All Products
             </Link>
           </li>
+
           <li className="navigation__item">
             <Link
               to="/about-us"
               className="navigation__link"
               onClick={closeNav}
             >
-              <span>3</span>About Us
+              <span>&#8226;</span>About Us
             </Link>
           </li>
           <li className="navigation__item">
@@ -142,12 +143,12 @@ const Navigation = () => {
               className="navigation__link"
               onClick={closeNav}
             >
-              <span>4</span>Contact Us
+              <span>&#8226;</span>Contact Us
             </Link>
           </li>
           <li className="navigation__item">
             <Link to="/cart" className="navigation__link" onClick={closeNav}>
-              <span>5</span>Cart
+              <span>&#8226;</span>Cart
             </Link>
           </li>
           <li className="navigation__item">

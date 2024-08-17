@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
-import logo from "../img/ALPHA-Logo.png";
+import logo from "../img/ALPHA-Logo-round-white.png";
 import "../css/index.comp.css"; // Add your custom CSS here
 
 const SingleProduct = () => {
@@ -87,17 +87,11 @@ const SingleProduct = () => {
   const flavourOptions = () => {
     switch (product.category) {
       case "Whey":
-        return [
-          "Rich Chocolate",
-          "Kaju Keshar Pista",
-          "Malai Kulfi",
-          "hvhv",
-          "strawberry",
-        ];
+        return ["Rich Chocolate", "Kaju Keshar Pista", "Malai Kulfi", "Mango"];
       case "Gainers":
-        return ["Malai Kulfi", "Rich Chocolate"];
+        return ["Malai Kulfi", "Rich Chocolate", "Keshar Pista"];
       case "Pre and Post Workouts":
-        return ["Voodo Black", "Fruity Fury"];
+        return ["Blackcurrent", "Blueberry"];
       default:
         return [];
     }

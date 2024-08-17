@@ -1,7 +1,7 @@
 // src/components/Header.jsx
 import React from "react";
 import "../css/index.comp.css";
-import logo from "../img/alpha-logo.jpg";
+import logo from "../img/ALPHA-Logo-round-black.png";
 import { Outlet, Link } from "react-router-dom";
 
 const Header = () => {

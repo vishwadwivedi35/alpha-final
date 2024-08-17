@@ -9,9 +9,9 @@ import "../css/index.comp.css";
 const Main = () => {
   const [products, setProducts] = useState([]);
   const specificIds = [
-    "66a09f35d097fd069bf5b4ef",
-    "66a09f7fd097fd069bf5b4f1",
-    "66a09f8dd097fd069bf5b4f3",
+    "66c066da95772e5820ee15dd",
+    "66c0678495772e5820ee15df",
+    "66c06ac095772e5820ee15e9",
   ]; // Replace with actual product IDs
 
   useEffect(() => {
@@ -101,6 +101,11 @@ const Main = () => {
       </section>
 
       <section className="section-features">
+        <div className="section-features__slider">
+          <div className="section-features__slide section-features__slide--1"></div>
+          <div className="section-features__slide section-features__slide--2"></div>
+          <div className="section-features__slide section-features__slide--3"></div>
+        </div>
         {/* <div className="row">
           <div className="col-1-of-4">
             <div className="feature-box">

@@ -16,6 +16,7 @@ import Support from "./routes/Support";
 import TermsConditions from "./routes/TermsConditions";
 import PrivacyPolicy from "./routes/PrivacyPolicy";
 import TrackPage from "./routes/TrackPage";
+import AboutUs from "./routes/AboutUs";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/support" element={<Support />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/track" element={<TrackPage />} />
         {/* <Route path="/" element={<Error />} /> */}
       </Routes>

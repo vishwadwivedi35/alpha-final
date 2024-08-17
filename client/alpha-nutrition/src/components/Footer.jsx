@@ -148,9 +148,12 @@ const Footer = () => {
             <span className="footer__link-header navigation__link">
               CONTACT INFO:
             </span>
-            CUSTOMER CARE NUMBER: +91-9109410160 EMAIL: INFO@ALPHAMUSCLE.IN
-            ADDRESS: G-1/1155, MAN SAROVAR PARK, DELHI - 110032 FOR BULK
-            ORDERS/SALES: ALPHAMUSCLE4@GMAIL.COM
+            CUSTOMER CARE NUMBER: +91-9109410160
+            <p>EMAIL: INFO@ALPHAMUSCLE.IN</p>
+            <p>
+              ADDRESS: G-1/1155, MAN SAROVAR PARK, DELHI - 110032 FOR BULK
+              ORDERS/SALES: ALPHAMUSCLE4@GMAIL.COM
+            </p>
           </p>
         </div>
       </div>

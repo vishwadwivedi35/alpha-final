@@ -135,6 +135,7 @@ body {
 }
 .heading-primary--shop {
   margin-left: 5rem;
+  flex: 1;
 }
 
 .heading-primary--sub {
@@ -233,6 +234,11 @@ body {
   padding: 10rem;
   margin-left: auto;
   margin-bottom: 2rem;
+  display: flex; /* Make it a flex container */
+  justify-content: center; /* Center the children horizontally */
+  flex-direction: row; /* Ensure children are in a row */
+  gap: 1rem; /* Add some spacing between the Link and the span */
+  flex-wrap: wrap; /* Allows wrapping in case of smaller screens */
 }
 .shopPage-cards {
   margin-left: 10rem;
@@ -490,34 +496,16 @@ body {
   border-top-right-radius: 3px;
 }
 .card__picture--1 {
-  background-image: 
-  /* linear-gradient(
-      to right bottom,
-      rgba(215, 35, 35, 0.8),
-      rgba(51, 51, 51, 0.8)
-    ), */ url(https://img8.hkrtcdn.com/34083/prd_3408227-MuscleBlaze-Biozyme-Performance-Whey-4.4-lb-Kesar-Kulfi_c_m.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 .card__picture--2 {
-  background-image: 
-  /* linear-gradient(
-      to right bottom,
-      rgba(215, 35, 35, 0.8),
-      rgba(51, 51, 51, 0.8)
-    ), */ url(https://img8.hkrtcdn.com/32169/prd_3216827-MuscleBlaze-Creatine-Monohydrate-0.88-lb-Unflavoured_c_m.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 .card__picture--3 {
-  background-image: 
-  /* linear-gradient(
-      to right bottom,
-      rgba(215, 35, 35, 0.8),
-      rgba(51, 51, 51, 0.8)
-    ), */ url(https://img10.hkrtcdn.com/33253/prd_3325249_c_m.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -1203,19 +1191,15 @@ body {
 
 .header {
   overflow: hidden; /* Ensure content doesn't overflow */
-  height: 95vh;
+  height: 85vh;
   background-size: contain;
   background-position: center;
   position: relative;
   background-color: #eeeeee;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
-}
-@media only screen and (max-width: 56.25em) {
-  .header {
-    margin-bottom: 6rem;
-    background-size: contain;
-    width: 100%;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header__slider {
@@ -1227,7 +1211,7 @@ body {
 
 .header__slide {
   flex: 1 0 100%;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
 }
 
@@ -1259,22 +1243,29 @@ body {
 }
 
 .header__slide--2 {
-  background-image: url(../img/alphaflyer2.jpg);
+  background-image: url(../img/alpha\ catagory\ 2.png);
 }
 
 .header__slide--3 {
   background-image: url(../img/png2pdf.png);
 }
 
-/* .header {
-  height: 85vh;
-  background-image:url(../img/png2pdf.png);
-  background-size: contain;
-  background-position: center;
-  position: relative;
-  background-color: #eeeeee;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
-} */
+@media only screen and (max-width: 56.25em) {
+  .header {
+    margin-bottom: 6rem;
+    height: 40vh;
+    background: no-repeat;
+    width: 100%;
+  }
+
+  .header__slider {
+    width: 300%;
+    background-size: contain; /* Maintain aspect ratio */
+    background-position: center;
+    background: no-repeat;
+  }
+}
+
 /* @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
   .header {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
@@ -1286,12 +1277,7 @@ body {
   only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
   only screen and (min-width: 125em) {
   .header {
-    background-image: linear-gradient(
-        to right bottom,
-        rgba(215, 35, 35, 0.8),
-        rgba(51, 51, 51, 0.8)
-      ),
-      url(../img/hero.jpg);
+    background-image: url(../img/hero.jpg);
   }
 } */
 /* @media only screen and (max-width: 37.5em) {
@@ -1307,6 +1293,9 @@ body {
   position: absolute;
   top: 4rem;
   left: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .header__logo {
   /* box-sizing: border-box;
@@ -1527,25 +1516,85 @@ body {
 }
 
 .section-features {
-  padding: 20rem 0;
-  background-image: 
-  /* linear-gradient(
-      to right bottom,
-      rgba(215, 35, 35, 0.8),
-      rgba(51, 51, 51, 0.8)
-    ), */ url(../img/get-preworkouts.jpg);
+  overflow: hidden; /* Ensure content doesn't overflow */
+  height: 100vh;
   background-size: contain;
   background-position: center;
+  position: relative;
+  background-color: #eeeeee;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
   transform: skewY(-7deg);
-  margin-top: -10rem;
 }
 .section-features > * {
   transform: skewY(7deg);
 }
+
 @media only screen and (max-width: 56.25em) {
   .section-features {
+    height: 85vh;
     padding: 10rem 0;
+    margin-bottom: 6rem;
+    background-size: contain;
+    width: 300%;
+    transform: none;
   }
+  .section-features__slider {
+    transform: none;
+  }
+  .section-features__slide {
+    transform: none;
+  }
+}
+
+.section-features__slider {
+  display: flex;
+  height: 100%;
+  width: 300%; /* Adjusted for 3 images */
+  animation: slideImages 12s infinite; /* 4s per image */
+  transform: skewY(7deg);
+}
+
+.section-features__slide {
+  flex: 1 0 100%;
+  background-size: contain; /* Ensure the entire image fits */
+  background-position: center;
+  height: 100%; /* Ensure it takes the full height */
+  transform: skewY(-7deg);
+}
+
+/* Define the animation for sliding images */
+@keyframes slideImages {
+  0% {
+    transform: translateX(0%);
+  }
+  33.33% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  66.66% {
+    transform: translateX(-100%);
+  }
+  83.33% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+/* Apply background images to each slide */
+.section-features__slide--1 {
+  background-image: url(../img/get-preworkouts.jpg);
+}
+
+.section-features__slide--2 {
+  background-image: url(../img/png2pdf.png);
+}
+
+.section-features__slide--3 {
+  background-image: url(../img/get-preworkouts.jpg);
 }
 
 .section-tours {
@@ -2126,7 +2175,7 @@ body {
 @media only screen and (max-width: 56.25em) {
   .page-content__contact-us {
     padding: 0;
-    width: 100%;
+    width: 150%;
     /* overflow: hidden; */
   }
 }
@@ -2159,6 +2208,14 @@ body {
     padding: 0;
     width: 100%;
     height: 900vh;
+    /* overflow: hidden; */
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .page-content__about-us {
+    padding: 0;
+    width: 100%;
+    height: 450vh;
     /* overflow: hidden; */
   }
 }

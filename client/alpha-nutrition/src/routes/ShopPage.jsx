@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "../components/Card";
 import { useLocation, Link } from "react-router-dom";
-import logo from "../img/ALPHA-Logo.png";
+import logo from "../img/ALPHA-Logo-round-white.png";
 
 const ShopPage = () => {
   const [products, setProducts] = useState([]);
@@ -56,10 +56,10 @@ const ShopPage = () => {
   return (
     <section className="section-shop">
       <h1 className="shop-heading">
-        <Link className="header__logo-box  heading-primary--shop" to="/">
+        <Link className="header__logo-box" to="/">
           <img src={logo} alt="Logo" className="header__logo" />
         </Link>
-        <span className="heading-primary--main">
+        <span className="heading-primary--main heading-primary--shop">
           {" "}
           OUR WIDE RANGE OF PRODUCTS{" "}
         </span>

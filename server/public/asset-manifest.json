@@ -1,29 +1,30 @@
 {
   "files": {
-    "main.css": "/static/css/main.0c3ad6e3.css",
-    "main.js": "/static/js/main.5e94fd2e.js",
+    "main.css": "/static/css/main.e511d9d3.css",
+    "main.js": "/static/js/main.6cc50ca1.js",
     "static/js/453.be082c87.chunk.js": "/static/js/453.be082c87.chunk.js",
     "static/media/alpha catagory 2.png": "/static/media/alpha catagory 2.d190356e0689ffaaf5fb.png",
     "static/media/png2pdf.png": "/static/media/png2pdf.cff88c6f947ddba68cab.png",
     "static/media/get-preworkouts.jpg": "/static/media/get-preworkouts.03dfaf9505ec2cd1fece.jpg",
     "static/media/ALPHA-Logo-round-white.png": "/static/media/ALPHA-Logo-round-white.92d6e056a6d0a00ea93e.png",
+    "static/media/hydro-iso-2lbs-malai-kulfi.png": "/static/media/hydro-iso-2lbs-malai-kulfi.333c15b93f46a0bc3028.png",
     "static/media/ALPHA-Logo-round-black.png": "/static/media/ALPHA-Logo-round-black.022ac546c2089cdad86e.png",
-    "static/media/img2.jpg": "/static/media/img2.6b06c9feaf5786f59f98.jpg",
+    "static/media/BULK-1kg-CHOCOLATE.png": "/static/media/BULK-1kg-CHOCOLATE.09153965f9c6ed4882df.png",
+    "static/media/LEAN-1kg-COCOLATE.png": "/static/media/LEAN-1kg-COCOLATE.dad98593929d0060c69f.png",
+    "static/media/whey-plus-1kg-KKP.png": "/static/media/whey-plus-1kg-KKP.fff6eaedc3f909ce3956.png",
     "static/media/img1.jpg": "/static/media/img1.30ca9f0b8745628c9616.jpg",
     "static/media/alpha-logo.jpg": "/static/media/alpha-logo.51aa3512464300a579d3.jpg",
-    "static/media/img3.jpg": "/static/media/img3.608c5465e5aa2b78e74e.jpg",
-    "static/media/img4.jpg": "/static/media/img4.47dcf08ff0330943ab89.jpg",
     "static/media/slick.svg": "/static/media/slick.7ba97953187dc2907930.svg",
     "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.0c3ad6e3.css.map": "/static/css/main.0c3ad6e3.css.map",
-    "main.5e94fd2e.js.map": "/static/js/main.5e94fd2e.js.map",
+    "main.e511d9d3.css.map": "/static/css/main.e511d9d3.css.map",
+    "main.6cc50ca1.js.map": "/static/js/main.6cc50ca1.js.map",
     "453.be082c87.chunk.js.map": "/static/js/453.be082c87.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c3ad6e3.css",
-    "static/js/main.5e94fd2e.js"
+    "static/css/main.e511d9d3.css",
+    "static/js/main.6cc50ca1.js"
   ]
 }

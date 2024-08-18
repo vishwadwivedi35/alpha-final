@@ -1,10 +1,10 @@
 // src/components/Main.jsx
 import React, { useState, useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
-import img1 from "../img/img1.jpg";
-import img2 from "../img/img2.jpg";
-import img3 from "../img/img3.jpg";
-import img4 from "../img/img4.jpg";
+import img1 from "../img/BULK-1kg-CHOCOLATE.png";
+import img2 from "../img/hydro-iso-2lbs-malai-kulfi.png";
+import img3 from "../img/LEAN-1kg-COCOLATE.png";
+import img4 from "../img/whey-plus-1kg-KKP.png";
 import "../css/index.comp.css";
 const Main = () => {
   const [products, setProducts] = useState([]);
@@ -106,59 +106,6 @@ const Main = () => {
           <div className="section-features__slide section-features__slide--2"></div>
           <div className="section-features__slide section-features__slide--3"></div>
         </div>
-        {/* <div className="row">
-          <div className="col-1-of-4">
-            <div className="feature-box">
-              <i className="feature-box__icon icon-basic-world"></i>
-              <h3 className="heading-tertiary u-margin-bottom-small">
-                Explore the world
-              </h3>
-              <p className="feature-box__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Aperiam, ipsum sapiente aspernatur.
-              </p>
-            </div>
-          </div>
-
-          <div className="col-1-of-4">
-            <div className="feature-box">
-              <i className="feature-box__icon icon-basic-compass"></i>
-              <h3 className="heading-tertiary u-margin-bottom-small">
-                Meet nature
-              </h3>
-              <p className="feature-box__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Aperiam, ipsum sapiente aspernatur.
-              </p>
-            </div>
-          </div>
-
-          <div className="col-1-of-4">
-            <div className="feature-box">
-              <i className="feature-box__icon icon-basic-map"></i>
-              <h3 className="heading-tertiary u-margin-bottom-small">
-                Find your way
-              </h3>
-              <p className="feature-box__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Aperiam, ipsum sapiente aspernatur.
-              </p>
-            </div>
-          </div>
-
-          <div className="col-1-of-4">
-            <div className="feature-box">
-              <i className="feature-box__icon icon-basic-heart"></i>
-              <h3 className="heading-tertiary u-margin-bottom-small">
-                Live a healthier life
-              </h3>
-              <p className="feature-box__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Aperiam, ipsum sapiente aspernatur.
-              </p>
-            </div>
-          </div>
-        </div> */}
       </section>
 
       <section className="section-tours" id="section-tours">
@@ -219,148 +166,6 @@ const Main = () => {
           <Outlet />
         </div>
       </section>
-
-      {/* <section className="section-stories">
-        <div className="bg-video">
-          <video className="bg-video__content" autoPlay muted loop>
-            <source src="img/video.mp4" type="video/mp4" />
-            <source src="img/video.webm" type="video/webm" />
-            Your browser is not supported!
-          </video>
-        </div>
-
-        <div className="u-center-text u-margin-bottom-big">
-          <h2 className="heading-secondary">We make people genuinely happy</h2>
-        </div>
-
-        <div className="row">
-          <div className="story">
-            <figure className="story__shape">
-              <img
-                src="img/nat-8.jpg"
-                alt="Person on a tour"
-                className="story__img"
-              />
-              <figcaption className="story__caption">Mary Smith</figcaption>
-            </figure>
-            <div className="story__text">
-              <h3 className="heading-tertiary u-margin-bottom-small">
-                I had the best week ever with my family
-              </h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Aperiam, ipsum sapiente aspernatur libero repellat quis
-                consequatur ducimus quam nisi exercitationem omnis earum qui.
-                Aperiam, ipsum sapiente aspernatur libero repellat quis
-                consequatur ducimus quam nisi exercitationem omnis earum qui.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="story">
-            <figure className="story__shape">
-              <img
-                src="img/nat-9.jpg"
-                alt="Person on a tour"
-                className="story__img"
-              />
-              <figcaption className="story__caption">Jack Wilson</figcaption>
-            </figure>
-            <div className="story__text">
-              <h3 className="heading-tertiary u-margin-bottom-small">
-                WOW! My life is completely different now
-              </h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Aperiam, ipsum sapiente aspernatur libero repellat quis
-                consequatur ducimus quam nisi exercitationem omnis earum qui.
-                Aperiam, ipsum sapiente aspernatur libero repellat quis
-                consequatur ducimus quam nisi exercitationem omnis earum qui.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="u-center-text u-margin-top-huge">
-          <a href="#" className="btn-text">
-            Read all stories &rarr;
-          </a>
-        </div>
-      </section> */}
-
-      {/* <section className="section-book">
-        <div className="row">
-          <div className="book">
-            <div className="book__form">
-              <form action="#" className="form">
-                <div className="u-margin-bottom-medium">
-                  <h2 className="heading-secondary">Start booking now</h2>
-                </div>
-
-                <div className="form__group">
-                  <input
-                    type="text"
-                    className="form__input"
-                    placeholder="Full name"
-                    id="name"
-                    required
-                  />
-                  <label htmlFor="name" className="form__label">
-                    Full name
-                  </label>
-                </div>
-
-                <div className="form__group">
-                  <input
-                    type="email"
-                    className="form__input"
-                    placeholder="Email address"
-                    id="email"
-                    required
-                  />
-                  <label htmlFor="email" className="form__label">
-                    Email address
-                  </label>
-                </div> */}
-
-      {/* <div className="form__group u-margin-bottom-medium">
-                  <div className="form__radio-group">
-                    <input
-                      type="radio"
-                      className="form__radio-input"
-                      id="small"
-                      name="size"
-                    />
-                    <label htmlFor="small" className="form__radio-label">
-                      <span className="form__radio-button"></span>
-                      Small tour group
-                    </label>
-                  </div>
-
-                  <div className="form__radio-group">
-                    <input
-                      type="radio"
-                      className="form__radio-input"
-                      id="large"
-                      name="size"
-                    />
-                    <label htmlFor="large" className="form__radio-label">
-                      <span className="form__radio-button"></span>
-                      Large tour group
-                    </label>
-                  </div>
-                </div> */}
-
-      {/* <div className="form__group">
-                  <button className="btn btn--green">Register &rarr;</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </main>
   );
 };

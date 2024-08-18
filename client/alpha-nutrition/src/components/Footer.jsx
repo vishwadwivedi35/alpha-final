@@ -104,7 +104,7 @@ const Footer = () => {
                     <a
                       href="#"
                       className="footer__link"
-                      onClick={() => handleCategoryClick("Whey")}
+                      onClick={() => handleCategoryClick("Whey Protein")}
                     >
                       Whey Protein
                     </a>
@@ -113,7 +113,9 @@ const Footer = () => {
                     <a
                       href="#"
                       className="footer__link"
-                      onClick={() => handleCategoryClick("Gainers")}
+                      onClick={() =>
+                        handleCategoryClick("Weight and Mass Gainers")
+                      }
                     >
                       Weight and Mass Gainers
                     </a>
@@ -133,7 +135,7 @@ const Footer = () => {
                     <a
                       href="#"
                       className="footer__link"
-                      onClick={() => handleCategoryClick("Vitamins")}
+                      onClick={() => handleCategoryClick("Daily Essentials")}
                     >
                       Daily Essentials
                     </a>

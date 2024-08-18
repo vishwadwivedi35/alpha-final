@@ -73,9 +73,9 @@ const SingleProduct = () => {
 
   const sizeOptions = () => {
     switch (product.category) {
-      case "Whey":
+      case "Whey Protein":
         return ["1kg", "2kg"];
-      case "Gainers":
+      case "Weight And Mass Gainers":
         return ["1kg", "2kg", "3kg", "5kg"];
       case "Pre and Post Workouts":
         return ["100gm", "200gm", "250gm", "300gm"];
@@ -86,9 +86,9 @@ const SingleProduct = () => {
 
   const flavourOptions = () => {
     switch (product.category) {
-      case "Whey":
+      case "Whey Protein":
         return ["Rich Chocolate", "Kaju Keshar Pista", "Malai Kulfi", "Mango"];
-      case "Gainers":
+      case "Weight And Mass Gainers":
         return ["Malai Kulfi", "Rich Chocolate", "Keshar Pista"];
       case "Pre and Post Workouts":
         return ["Blackcurrent", "Blueberry"];

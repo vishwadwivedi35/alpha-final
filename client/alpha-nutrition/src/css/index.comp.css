@@ -254,6 +254,11 @@ body {
   align-items: center;
   margin-left: 40rem;
 }
+@media only screen and (max-width: 56.25em) {
+  .section-card {
+    margin-left: 10rem;
+  }
+}
 
 .paragraph {
   font-size: 1.6rem;
@@ -496,16 +501,19 @@ body {
   border-top-right-radius: 3px;
 }
 .card__picture--1 {
+  background-image: url("../img/whey-plus-1kg-KKP.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 .card__picture--2 {
+  background-image: url("../img/LEAN-1kg-COCOLATE.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 .card__picture--3 {
+  background-image: url("../img/hydro-iso-2lbs-malai-kulfi.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -651,7 +659,7 @@ body {
   .composition__photo--p1 {
     top: -5rem;
     left: 3rem;
-    transform: scale(1.4);
+    transform: scale(1);
   }
 }
 .composition__photo--p2 {
@@ -662,7 +670,7 @@ body {
   .composition__photo--p2 {
     top: -5rem;
     right: -7rem;
-    transform: scale(1.4);
+    transform: scale(1);
     /* z-index: 100; */
   }
 }
@@ -678,14 +686,14 @@ body {
   .composition__photo--p3 {
     top: -6rem;
     left: 3rem;
-    transform: scale(1.4);
+    transform: scale(1);
   }
 }
 @media only screen and (max-width: 56.25em) {
   .composition__photo--p4 {
     top: -6rem;
     left: 7rem;
-    transform: scale(1.4);
+    transform: scale(1);
   }
 }
 .composition__photo:hover {

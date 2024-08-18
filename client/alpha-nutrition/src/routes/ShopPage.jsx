@@ -75,10 +75,12 @@ const ShopPage = () => {
           onChange={(e) => setCategory(e.target.value)}
         >
           <option value="All">All</option>
-          <option value="Whey">Whey Protein</option>
-          <option value="Gainers">Weight And Mass Gainers</option>
+          <option value="Whey Protein">Whey Protein</option>
+          <option value="Weight And Mass Gainers">
+            Weight And Mass Gainers
+          </option>
           <option value="Pre and Post Workouts">Pre and Post Workouts</option>
-          <option value="Vitamins">Daily Essentials</option>
+          <option value="Daily Essentials">Daily Essentials</option>
         </select>
       </div>
       <div className="section-card">

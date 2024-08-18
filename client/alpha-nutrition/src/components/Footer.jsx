@@ -160,7 +160,7 @@ const Footer = () => {
         </div>
       </div>
       <span className="footer__copyright copyright">
-        &#169; 2024 Pixelsbucket. All rights reserved.
+        &#169; 2024 Alpha Muscle. All rights reserved. Powered By PIXELSBUCKET.
       </span>
     </footer>
   );

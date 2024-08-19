@@ -1,11 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.e511d9d3.css",
-    "main.js": "/static/js/main.329ef8e7.js",
+    "main.css": "/static/css/main.ae684ccd.css",
+    "main.js": "/static/js/main.06975c80.js",
     "static/js/453.be082c87.chunk.js": "/static/js/453.be082c87.chunk.js",
     "static/media/alpha catagory 2.png": "/static/media/alpha catagory 2.d190356e0689ffaaf5fb.png",
     "static/media/png2pdf.png": "/static/media/png2pdf.cff88c6f947ddba68cab.png",
-    "static/media/get-preworkouts.jpg": "/static/media/get-preworkouts.03dfaf9505ec2cd1fece.jpg",
     "static/media/ALPHA-Logo-round-white.png": "/static/media/ALPHA-Logo-round-white.92d6e056a6d0a00ea93e.png",
     "static/media/hydro-iso-2lbs-malai-kulfi.png": "/static/media/hydro-iso-2lbs-malai-kulfi.333c15b93f46a0bc3028.png",
     "static/media/ALPHA-Logo-round-black.png": "/static/media/ALPHA-Logo-round-black.022ac546c2089cdad86e.png",
@@ -19,12 +18,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.e511d9d3.css.map": "/static/css/main.e511d9d3.css.map",
-    "main.329ef8e7.js.map": "/static/js/main.329ef8e7.js.map",
+    "main.ae684ccd.css.map": "/static/css/main.ae684ccd.css.map",
+    "main.06975c80.js.map": "/static/js/main.06975c80.js.map",
     "453.be082c87.chunk.js.map": "/static/js/453.be082c87.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e511d9d3.css",
-    "static/js/main.329ef8e7.js"
+    "static/css/main.ae684ccd.css",
+    "static/js/main.06975c80.js"
   ]
 }

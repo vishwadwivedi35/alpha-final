@@ -430,6 +430,11 @@ body {
   background-color: #000;
   color: white;
 }
+@media only screen and (max-width: 56.25em) {
+  .btn--header {
+    font-size: small;
+  }
+}
 
 .checkout {
   display: flex;
@@ -1261,7 +1266,7 @@ body {
 @media only screen and (max-width: 56.25em) {
   .header {
     margin-bottom: 6rem;
-    height: 40vh;
+    height: 35vh;
     background: no-repeat;
     width: 100%;
   }
@@ -1311,6 +1316,12 @@ body {
   /* border: 1px solid transparent; */
   height: 12rem;
   width: 13rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .header__logo {
+    height: 7rem;
+    width: 8rem;
+  }
 }
 .header__logo--shop {
   top: 6rem;
@@ -1524,53 +1535,66 @@ body {
 }
 
 .section-features {
-  overflow: hidden; /* Ensure content doesn't overflow */
+  overflow: hidden;
   height: 100vh;
   background-size: contain;
   background-position: center;
   position: relative;
   background-color: #eeeeee;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
-  transform: skewY(-7deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../img/alpha\ catagory\ 2.png);
 }
 .section-features > * {
   transform: skewY(7deg);
 }
-
 @media only screen and (max-width: 56.25em) {
   .section-features {
-    height: 85vh;
-    padding: 10rem 0;
+    height: 70vh;
+    background-repeat: no-repeat;
+  }
+}
+
+/* @media only screen and (max-width: 56.25em) {
+  .section-features {
+    height: 40vh;
     margin-bottom: 6rem;
-    background-size: contain;
-    width: 300%;
+    background-size: cover;
+    background: no-repeat;
+    width: 100%;
     transform: none;
+    background-image: url(../img/alpha\ catagory\ 2.png);
   }
   .section-features__slider {
     transform: none;
+    background-size: contain;
+    background-position: center;
+    background: no-repeat;
+    background-color: #eeeeee;
   }
   .section-features__slide {
     transform: none;
   }
-}
+} */
 
-.section-features__slider {
+/* .section-features__slider {
   display: flex;
   height: 100%;
-  width: 300%; /* Adjusted for 3 images */
-  animation: slideImages 12s infinite; /* 4s per image */
+  width: 300%;
+  animation: slideImages 12s infinite;
   transform: skewY(7deg);
 }
 
 .section-features__slide {
   flex: 1 0 100%;
-  background-size: contain; /* Ensure the entire image fits */
+  background-size: contain;
   background-position: center;
-  height: 100%; /* Ensure it takes the full height */
+  height: 100%;
   transform: skewY(-7deg);
 }
 
-/* Define the animation for sliding images */
 @keyframes slideImages {
   0% {
     transform: translateX(0%);
@@ -1592,18 +1616,17 @@ body {
   }
 }
 
-/* Apply background images to each slide */
 .section-features__slide--1 {
-  background-image: url(../img/get-preworkouts.jpg);
+  background-image: url(../img/alpha\ catagory\ 2.png);
 }
 
 .section-features__slide--2 {
-  background-image: url(../img/png2pdf.png);
+  background-image: url(../img/alpha\ catagory\ 2.png);
 }
 
 .section-features__slide--3 {
-  background-image: url(../img/get-preworkouts.jpg);
-}
+  background-image: url(../img/alpha\ catagory\ 2.png);
+} */
 
 .section-tours {
   background-color: #f7f7f7;

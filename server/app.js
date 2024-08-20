@@ -10,6 +10,7 @@ const orderRoutes = require("./routes/orderRoutes");
 // const apiRoutes = require("./routes/api");
 
 app.use(express.json()); // Middleware to parse JSON bodies
+dotenv.config();
 
 const mongoUri = process.env.MONGO_URI;
 mongoose

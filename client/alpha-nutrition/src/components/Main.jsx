@@ -17,7 +17,7 @@ const Main = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:9000/api/products");
+        const response = await fetch("https://alphamuscle.in/api/products");
         const data = await response.json();
         const filteredProducts = data.filter((product) =>
           specificIds.includes(product._id)

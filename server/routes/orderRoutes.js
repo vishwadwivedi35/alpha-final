@@ -9,7 +9,7 @@ const { createOrder } = require("../controllers/orderController");
 const transporter = nodemailer.createTransport({
   service: "Gmail", // You can use other services
   auth: {
-    user: "vishwadwivedi22@gmail.com",
+    user: "alphamuscle4@gmail.com",
     pass: "erxs szkk wiqy eqzh",
   },
 });
@@ -42,7 +42,7 @@ router.post("/send-invoice", async (req, res) => {
     .join("");
 
   const mailOptions = {
-    from: "your-email@gmail.com",
+    from: "alphamuscle4@gmail.com",
     to: email,
     subject: "Your Order Invoice",
     html: `

@@ -13,6 +13,9 @@ const Checkout = () => {
         <Link className="btn btn--white btn--toHome" to="/">
           Back To Home
         </Link>
+        <span className="heading-primary--sub">
+          Track you order with us here : <Link to="/track"></Link>
+        </span>
         <Outlet />
       </div>
     </section>

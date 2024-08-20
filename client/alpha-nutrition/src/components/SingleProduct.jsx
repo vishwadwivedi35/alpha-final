@@ -18,7 +18,7 @@ const SingleProduct = () => {
     const fetchProduct = async () => {
       try {
         const response = await fetch(
-          `http://localhost:9000/api/products/${id}`
+          `https://alphamuscle.in/api/products/${id}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch product");

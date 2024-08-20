@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const express = require("express");
+const dotenv = require("dotenv");
 const app = express();
 const path = require("path");
 const cors = require("cors");
@@ -10,11 +11,9 @@ const orderRoutes = require("./routes/orderRoutes");
 
 app.use(express.json()); // Middleware to parse JSON bodies
 
-const MONGODB_URI =
-  "mongodb+srv://vishwadwivedi35:vishwaD@alphanutrition.m6aqfyy.mongodb.net/?retryWrites=true&w=majority&appName=alphaNutrition";
-
+const mongoUri = process.env.MONGO_URI;
 mongoose
-  .connect(MONGODB_URI)
+  .connect(mongoUri)
   .then(() => console.log("MongoDB connected..."))
   .catch((err) => console.log("MongoDB connection error:", err));
 
@@ -25,6 +24,7 @@ app.use(
       "http://localhost:3001",
       "http://localhost:9000",
       "https://res.cloudinary.com",
+      "https://alphamuscle.in",
     ],
   })
 );

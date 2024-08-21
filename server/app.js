@@ -25,18 +25,16 @@ app.use(
       "http://localhost:3001",
       "http://localhost:9000",
       "https://res.cloudinary.com",
-      "https://alphamuscle.in",
+      "www.alphamuscle.in",
+      "api.www.alphamuscle.in",
     ],
   })
 );
 
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*"); // or specific origin
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
+  res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
+  res.setHeader("Cross-Origin-Opener-Policy", "*");
+  res.setHeader("Cross-Origin-Embedder-Policy", "unsafe-none");
   next();
 });
 

@@ -25,15 +25,14 @@ app.use(
       "http://localhost:3001",
       "http://localhost:9000",
       "https://res.cloudinary.com",
-      "www.alphamuscle.in",
-      "api.www.alphamuscle.in",
+      "https://www.alphamuscle.in",
+      "https://api.www.alphamuscle.in",
     ],
   })
 );
 
 app.use((req, res, next) => {
   res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
-  res.setHeader("Cross-Origin-Opener-Policy", "*");
   res.setHeader("Cross-Origin-Embedder-Policy", "unsafe-none");
   next();
 });

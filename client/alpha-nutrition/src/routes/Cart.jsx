@@ -26,7 +26,7 @@ const Cart = () => {
   const sendInvoiceEmail = async (email, order) => {
     try {
       const response = await fetch(
-        "https://www.alphamuscle.in/api/orders/send-invoice",
+        "https://api.alphamuscle.in/api/orders/send-invoice",
         {
           method: "POST",
           headers: {
@@ -83,7 +83,7 @@ const Cart = () => {
     console.log("Order Payload:", order);
 
     try {
-      const response = await fetch("https://www.alphamuscle.in/api/orders", {
+      const response = await fetch("https://api.alphamuscle.in/api/orders", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -17,7 +17,7 @@ const ShopPage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("https://www.alphamuscle.in/api/products");
+        const response = await fetch("https://api.alphamuscle.in/api/products");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }

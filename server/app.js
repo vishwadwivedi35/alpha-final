@@ -27,6 +27,7 @@ app.use(
       "https://res.cloudinary.com",
       "https://www.alphamuscle.in",
       "https://api.www.alphamuscle.in",
+      "https://alphamuscle.in",
     ],
   })
 );

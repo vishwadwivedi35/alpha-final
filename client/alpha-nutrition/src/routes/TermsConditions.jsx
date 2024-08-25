@@ -1,10 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../css/index.comp.css";
+import logo from "../img/ALPHA-Logo-round-white.png";
 
 const TermsConditions = () => {
   return (
     <div className="page-content page-content__tnc">
-      <h2 className="heading-primary--main">Terms & Conditions</h2>
+      <h1 className="shop-heading">
+        <Link className="header__logo-box" to="/">
+          <img src={logo} alt="Logo" className="header__logo" />
+        </Link>
+        <h2 className="heading-primary--main heading-primary--static">
+          Terms & Conditions
+        </h2>
+      </h1>
       <div className="contact-us__para">
         <p className="heading-primary">Welcome to Alpha Muscle Nutrition!</p>
       </div>

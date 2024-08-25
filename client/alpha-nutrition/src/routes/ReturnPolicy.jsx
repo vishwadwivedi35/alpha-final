@@ -1,10 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../css/index.comp.css";
+import logo from "../img/ALPHA-Logo-round-white.png";
 
 const ReturnPolicy = () => {
   return (
     <div className="page-content page-content__return-policy">
-      <h1 className="heading-primary--main">Return Policy</h1>
+      <h1 className="shop-heading">
+        <Link className="header__logo-box" to="/">
+          <img src={logo} alt="Logo" className="header__logo" />
+        </Link>
+        <h1 className="heading-primary--main heading-primary--static">
+          Return Policy
+        </h1>
+      </h1>
       <div className="contact-us__para">
         <p className="heading-primary">
           Welcome to Alpha Muscle Nutrition! We are thrilled to have you as a

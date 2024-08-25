@@ -24,6 +24,7 @@ const SingleProduct = () => {
           throw new Error("Failed to fetch product");
         }
         const data = await response.json();
+        console.log("Fetched product:", data);
         setProduct(data);
 
         // Update quantity if product is already in cart
@@ -32,9 +33,47 @@ const SingleProduct = () => {
           setQuantity(cartItem.quantity);
         }
 
-        // Initialize default size and flavour if available
-        setSelectedSize(data.sizes ? data.sizes[0] : "");
-        setSelectedFlavour(data.flavours ? data.flavours[0] : "");
+        // Determine default size and flavour based on category
+        let initialSize = "";
+        let initialFlavour = "";
+
+        switch (data.category) {
+          case "Whey Protein":
+            initialSize =
+              data.sizes && data.sizes.length > 0 ? data.sizes[0] : "1kg";
+            initialFlavour =
+              data.flavours && data.flavours.length > 0
+                ? data.flavours[0]
+                : "Rich Chocolate";
+            break;
+          case "Weight And Mass Gainers":
+            initialSize =
+              data.sizes && data.sizes.length > 0 ? data.sizes[0] : "2kg";
+            initialFlavour =
+              data.flavours && data.flavours.length > 0
+                ? data.flavours[0]
+                : "Malai Kulfi";
+            break;
+          case "Pre and Post Workouts":
+            initialSize =
+              data.sizes && data.sizes.length > 0 ? data.sizes[0] : "100gm";
+            initialFlavour =
+              data.flavours && data.flavours.length > 0
+                ? data.flavours[0]
+                : "Blackcurrant";
+            break;
+          default:
+            initialSize =
+              data.sizes && data.sizes.length > 0 ? data.sizes[0] : "";
+            initialFlavour =
+              data.flavours && data.flavours.length > 0 ? data.flavours[0] : "";
+        }
+
+        setSelectedSize(initialSize);
+        setSelectedFlavour(initialFlavour);
+
+        console.log("Initialized size:", initialSize); // Debugging
+        console.log("Initialized flavour:", initialFlavour); // Debugging
       } catch (error) {
         console.error("Error fetching product:", error);
       }
@@ -44,7 +83,19 @@ const SingleProduct = () => {
   }, [id, cartItems]);
 
   const handleAddToCart = () => {
-    addToCart({ ...product, quantity, selectedSize, selectedFlavour });
+    // Use the selected or fallback size and flavour
+    const size = selectedSize;
+    const flavour = selectedFlavour;
+
+    console.log("Adding to cart with size:", size); // Debugging
+    console.log("Adding to cart with flavour:", flavour); // Debugging
+
+    addToCart({
+      ...product,
+      quantity,
+      selectedSize: size,
+      selectedFlavour: flavour,
+    });
     navigate("/cart"); // Redirect to cart page after adding to cart
   };
 
@@ -225,10 +276,10 @@ const SingleProduct = () => {
               </div>
             </div>
           </div>
-          <h1 className="heading-tertiary u-margin-bottom-small heading-tertiary--description">
+          <h1 className="heading-tertiary u-margin-bottom-small heading-tertiary--description heading-secondary">
             Product Description
           </h1>
-          <p>
+          <p className="long-description--para">
             {product.longDescription || "No additional description available."}
           </p>
         </section>

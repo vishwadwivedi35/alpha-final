@@ -1,10 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../css/index.comp.css";
+import logo from "../img/ALPHA-Logo-round-white.png";
 
 const PrivacyPolicy = () => {
   return (
     <div className="page-content page-content__privacy">
-      <h2 className="heading-primary--main">Privacy Policy</h2>
+      <h1 className="shop-heading">
+        <Link className="header__logo-box" to="/">
+          <img src={logo} alt="Logo" className="header__logo" />
+        </Link>
+        <h2 className="heading-primary--main heading-primary--static">
+          Privacy Policy
+        </h2>
+      </h1>
       <div className="contact-us__para">
         <p className="heading-primary">
           At Alpha Muscle, we respect and value the privacy of our customers.

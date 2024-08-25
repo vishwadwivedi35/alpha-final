@@ -54,6 +54,7 @@ const Cart = () => {
 
     const order = {
       user: sessionUserInfo[0].uid,
+      email: sessionUserInfo[0].email,
       products: cartItems.map(
         ({
           _id,
@@ -195,7 +196,9 @@ const Cart = () => {
             <div className="row">
               <div className="address-form">
                 <div className="u-margin-bottom-medium">
-                  <h2 className="heading-secondary">Add Shipping Address</h2>
+                  <h2 className="heading-secondary">
+                    Add Shipping Address With Phone Number
+                  </h2>
                 </div>
                 <div className="form__group">
                   <textarea

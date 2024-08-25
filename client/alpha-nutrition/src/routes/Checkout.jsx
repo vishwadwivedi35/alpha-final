@@ -6,7 +6,7 @@ const Checkout = () => {
   return (
     <section className="section-book section-book__checkout">
       <div className="checkout">
-        <h1 className="heading-primary">
+        <h1 className="heading-primary heading-primary--static">
           <span className="heading-primary--main">Your Order Is Placed, </span>
           <span className="heading-primary--sub">Shop With Us Again</span>
         </h1>
@@ -14,7 +14,7 @@ const Checkout = () => {
           Back To Home
         </Link>
         <span className="heading-primary--sub">
-          Track you order with us here : <Link to="/track"></Link>
+          Track you order with us <Link to="/track">here</Link>
         </span>
         <Outlet />
       </div>

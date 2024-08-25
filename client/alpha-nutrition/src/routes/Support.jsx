@@ -1,10 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../css/index.comp.css";
+import logo from "../img/ALPHA-Logo-round-white.png";
 
 const Support = () => {
   return (
     <div className="page-content page-content__support">
-      <h2 className="heading-primary--main">Support</h2>
+      <h1 className="shop-heading">
+        <Link className="header__logo-box" to="/">
+          <img src={logo} alt="Logo" className="header__logo" />
+        </Link>
+        <h2 className="heading-primary--main heading-primary--static">
+          Support
+        </h2>
+      </h1>
       <div className="contact-us__para">
         <p className="heading-primary">
           At Alphamuscle, we prioritize providing exceptional support to our

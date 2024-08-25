@@ -1,10 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../css/index.comp.css";
+import logo from "../img/ALPHA-Logo-round-white.png";
 
 const ContactUs = () => {
   return (
     <div className="page-content page-content__contact-us">
-      <h2 className="heading-primary--main">Contact Us</h2>
+      <h1 className="shop-heading">
+        <Link className="header__logo-box" to="/">
+          <img src={logo} alt="Logo" className="header__logo" />
+        </Link>
+        <h2 className="heading-primary--main heading-primary--static">
+          Contact Us
+        </h2>
+      </h1>
       <div className="book__form">
         <form className="form contact-form">
           {/* <h2 className="heading-primary--sub heading--contact-us">
@@ -27,7 +36,9 @@ const ContactUs = () => {
             <input type="text" name="gstinNumber" className="form__input" />
           </div>
           <div className="form__group">
-            <button className="btn btn--green">Register &rarr;</button>
+            <button className="btn btn--green btn--contact-us">
+              Register &rarr;
+            </button>
           </div>
         </form>
         <div className="contact-us__para">

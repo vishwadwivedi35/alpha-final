@@ -13,14 +13,35 @@ const productSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  images: {
-    type: [String],
-    required: true,
-  },
   longDescription: {
     type: String,
     required: true,
   },
+  images: [
+    {
+      type: String,
+    },
+  ],
+  category: {
+    type: String,
+    enum: [
+      "Whey Protein",
+      "Weight And Mass Gainers",
+      "Pre and Post Workouts",
+      "Daily Essentials",
+    ],
+    required: true,
+  },
+  sizes: [
+    {
+      type: String,
+    },
+  ], // New field for sizes
+  flavours: [
+    {
+      type: String,
+    },
+  ], // New field for flavours
 });
 
 const Product = mongoose.model("Product", productSchema);

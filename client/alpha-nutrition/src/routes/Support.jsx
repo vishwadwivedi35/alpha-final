@@ -6,7 +6,7 @@ import logo from "../img/ALPHA-Logo-round-white.png";
 const Support = () => {
   return (
     <div className="page-content page-content__support">
-      <h1 className="shop-heading">
+      <h1 className="shop-heading heading-static">
         <Link className="header__logo-box" to="/">
           <img src={logo} alt="Logo" className="header__logo" />
         </Link>

@@ -213,9 +213,9 @@ body {
     margin-top: 10rem;
   }
 }
-.heading-primary--static {
-  margin-right: 50rem;
-}
+/* .heading-primary--static {
+  margin-right:
+} */
 @media only screen and (max-width: 1024px) {
   .heading-primary--static {
     font-size: 3rem;
@@ -256,6 +256,15 @@ body {
   flex-direction: row; /* Ensure children are in a row */
   gap: 1rem; /* Add some spacing between the Link and the span */
   flex-wrap: wrap; /* Allows wrapping in case of smaller screens */
+}
+.heading-static {
+  margin: 0 auto;
+  padding: 0;
+}
+@media only screen and (max-width: 480px) {
+  .heading-static {
+    padding: 8rem;
+  }
 }
 .shopPage-cards {
   margin-left: 10rem;
@@ -1311,7 +1320,7 @@ body {
 }
 
 .header__slide--2 {
-  background-image: url(../img/alpha\ catagory\ 2.png);
+  background-image: url(../img/png2pdf.png);
 }
 
 .header__slide--3 {
@@ -1378,6 +1387,62 @@ body {
     width: 8rem;
   }
 }
+
+.auth__logo-box {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth__logo {
+  height: 10rem;
+  width: 10rem;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .authentication-container {
+    flex-direction: column;
+    width: 90%;
+    max-width: none;
+  }
+
+  .auth__logo-box {
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .auth__logo {
+    height: 7rem;
+    width: 7rem;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .authpage {
+    padding: 1rem;
+  }
+
+  .authentication-container {
+    padding: 0;
+    width: 100%;
+  }
+
+  .auth__logo-box {
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .auth__logo {
+    height: 5rem;
+    width: 5rem;
+  }
+}
+
 .header__logo--shop {
   top: 6rem;
   left: 6rem;
@@ -1760,8 +1825,8 @@ body {
 }
 .book__form {
   width: 50%;
-  padding: 10rem;
-  margin-left: 10rem;
+  padding: 0 10rem 20rem 20rem;
+  margin-left: 0rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -2145,11 +2210,30 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.authentication-container {
+.authpage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  gap: 2rem;
+  position: relative;
+}
+/* .authentication-container {
   display: flex;
   width: 900px;
   justify-content: space-between;
   margin: 30px auto;
+} */
+.authentication-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 900px;
+  justify-content: space-between;
+  margin: 30px auto;
+  padding: 0 1rem;
 }
 .sign-up-container {
   display: flex;
@@ -2318,7 +2402,7 @@ body {
 .contact-form {
   flex: 1;
   margin: 4rem;
-  padding: 14rem;
+  padding: 0 24rem;
   width: auto;
 }
 
@@ -2457,7 +2541,7 @@ body {
 
   .contact-us__para {
     margin: 2rem;
-    padding: 2rem;
+    padding: 29rem;
     font-size: 1.2rem;
   }
   .contact-us__para:last-child {
@@ -2473,7 +2557,7 @@ body {
 
   .contact-us__para {
     margin: 1rem;
-    padding: 1rem;
+    padding: 9rem;
     font-size: 1rem;
   }
   .contact-us__para:last-child {
@@ -2511,4 +2595,39 @@ body {
     padding: 2rem;
     width: 100%;
   }
+}
+
+.form.contact-form {
+  flex: 1 1 45%;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 12rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form__group {
+  margin-bottom: 1.5rem;
+  padding: 2rem;
+}
+
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.form__input {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.form__input::placeholder {
+  color: #666;
 }

@@ -6,7 +6,7 @@ import logo from "../img/ALPHA-Logo-round-white.png";
 const ContactUs = () => {
   return (
     <div className="page-content page-content__contact-us">
-      <h1 className="shop-heading">
+      <h1 className="shop-heading heading-static heading--contact-us">
         <Link className="header__logo-box" to="/">
           <img src={logo} alt="Logo" className="header__logo" />
         </Link>
@@ -14,7 +14,7 @@ const ContactUs = () => {
           Contact Us
         </h2>
       </h1>
-      <div className="book__form">
+      <div className="book__form book__form--contact-us">
         <form className="form contact-form">
           {/* <h2 className="heading-primary--sub heading--contact-us">
             Contact Form

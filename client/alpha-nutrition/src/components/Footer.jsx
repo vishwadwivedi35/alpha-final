@@ -3,11 +3,6 @@ import { useNavigate, Link } from "react-router-dom";
 import "../css/index.comp.css";
 import logo from "../img/alpha-logo.jpg";
 
-// import logoGreen1x from "../img/logo-green-1x.png";
-// import logoGreen2x from "../img/logo-green-2x.png";
-// import logoGreenSmall1x from "../img/logo-green-small-1x.png";
-// import logoGreenSmall2x from "../img/logo-green-small-2x.png";
-
 const Footer = () => {
   const navigate = useNavigate();
 
@@ -114,7 +109,7 @@ const Footer = () => {
                       href="#"
                       className="footer__link"
                       onClick={() =>
-                        handleCategoryClick("Weight and Mass Gainers")
+                        handleCategoryClick("Weight And Mass Gainers")
                       }
                     >
                       Weight and Mass Gainers

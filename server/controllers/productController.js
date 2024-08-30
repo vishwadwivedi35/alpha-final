@@ -11,14 +11,23 @@ const getProducts = async (req, res) => {
 
 const postProduct = async (req, res) => {
   try {
-    const { name, description, price, images, category } = req.body;
+    const { name, description, price, mrp, images, category } = req.body;
+
+    if (!mrp || mrp <= price) {
+      return res
+        .status(400)
+        .json({ error: "MRP must be greater than the selling price." });
+    }
+
     const newProduct = new Product({
       name,
       description,
       price,
+      mrp, // Ensure the MRP is saved
       images,
       category,
     });
+
     await newProduct.save();
     res.status(201).json(newProduct);
   } catch (err) {

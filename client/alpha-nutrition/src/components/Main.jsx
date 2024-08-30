@@ -65,36 +65,45 @@ const Main = () => {
           </div>
           <div className="col-1-of-2">
             <div className="composition">
-              <img
-                // srcSet="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
-                // sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
-                alt="Photo 1"
-                className="composition__photo composition__photo--p1"
-                src={img1}
-              />
+              <a href="http://www.alphamuscle.in/shop?category=Weight%20And%20Mass%20Gainers#">
+                <img
+                  // srcSet="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                  // sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                  alt="Photo 1"
+                  className="composition__photo composition__photo--p1"
+                  src={img1}
+                />
+              </a>
 
-              <img
-                // srcSet="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
-                // sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
-                alt="Photo 2"
-                className="composition__photo composition__photo--p2"
-                src={img2}
-              />
+              <a href="http://www.alphamuscle.in/shop?category=Whey%20Protein#">
+                <img
+                  // srcSet="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                  // sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                  alt="Photo 2"
+                  className="composition__photo composition__photo--p2"
+                  src={img2}
+                />
+              </a>
 
-              <img
-                // srcSet="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
-                // sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
-                alt="Photo 3"
-                className="composition__photo composition__photo--p3"
-                src={img3}
-              />
-              <img
-                // srcSet="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
-                // sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
-                alt="Photo 4"
-                className="composition__photo composition__photo--p4"
-                src={img4}
-              />
+              <a href="http://www.alphamuscle.in/shop?category=Pre%20and%20Post%20Workouts#">
+                <img
+                  // srcSet="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                  // sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                  alt="Photo 3"
+                  className="composition__photo composition__photo--p3"
+                  src={img3}
+                />
+              </a>
+
+              <a href="http://www.alphamuscle.in/shop?category=Daily%20Essentials#">
+                <img
+                  // srcSet="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                  // sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                  alt="Photo 4"
+                  className="composition__photo composition__photo--p4"
+                  src={img4}
+                />
+              </a>
             </div>
           </div>
         </div>

@@ -6,25 +6,23 @@ import logo from "../img/ALPHA-Logo-round-white.png";
 const ReturnPolicy = () => {
   return (
     <div className="page-content page-content__return-policy">
-      <h1 className="shop-heading heading-static">
+      <h1 className="heading--main-pages">
         <Link className="header__logo-box" to="/">
           <img src={logo} alt="Logo" className="header__logo" />
         </Link>
-        <h1 className="heading-primary--main heading-primary--static">
-          Return Policy
-        </h1>
+        <h1 className="heading--main-static">Return Policy</h1>
       </h1>
       <div className="contact-us__para">
-        <p className="heading-primary">
+        <p className="heading-static">
           Welcome to Alpha Muscle Nutrition! We are thrilled to have you as a
           valued customer. If you're not entirely satisfied with your purchase,
           we're here to help with our hassle-free return policy.
         </p>
       </div>
 
-      <h3 className="heading-tertiary">7-Day Return Satisfaction Guarantee:</h3>
+      <h3 className="heading-pages">7-Day Return Satisfaction Guarantee:</h3>
       <div className="contact-us__para">
-        <p className="heading-primary">
+        <p className="heading-static">
           We stand behind the quality of our products and offer a 7-day
           satisfaction guarantee. If for any reason you are not satisfied with
           your purchase, you may return it within 7 days from the date of
@@ -32,9 +30,9 @@ const ReturnPolicy = () => {
         </p>
       </div>
 
-      <h3 className="heading-tertiary">Conditions for Returns:</h3>
+      <h3 className="heading-pages">Conditions for Returns:</h3>
       <div className="contact-us__para">
-        <p className="heading-primary">
+        <p className="heading-static">
           To be eligible for a return, your item must be unused or unopened and
           in the same condition that you received it. It must also be in the
           original packaging. You can generate a return for all items within 24
@@ -44,9 +42,9 @@ const ReturnPolicy = () => {
         </p>
       </div>
 
-      <h3 className="heading-tertiary">Initiating a Return:</h3>
+      <h3 className="heading-pages">Initiating a Return:</h3>
       <div className="contact-us__para">
-        <p className="heading-primary">
+        <p className="heading-static">
           To initiate a return, please contact our customer service team at{" "}
           <a href="mailto:info@alphamuscle.in">info@alphamuscle.in</a> with your
           order number and the reason for the return. Our dedicated team will
@@ -55,9 +53,9 @@ const ReturnPolicy = () => {
         </p>
       </div>
 
-      <h3 className="heading-tertiary">Return Shipping:</h3>
+      <h3 className="heading-pages">Return Shipping:</h3>
       <div className="contact-us__para">
-        <p className="heading-primary">
+        <p className="heading-static">
           Customers are responsible for return shipping costs unless the return
           is due to an error on our part or a defective product. We recommend
           using a trackable shipping service and purchasing shipping insurance
@@ -65,9 +63,9 @@ const ReturnPolicy = () => {
         </p>
       </div>
 
-      <h3 className="heading-tertiary">Refunds:</h3>
+      <h3 className="heading-pages">Refunds:</h3>
       <div className="contact-us__para">
-        <p className="heading-primary">
+        <p className="heading-static">
           Once your return is received and inspected, we will process your
           refund within 7 business days. Refunds will be issued to the original
           payment method used for the purchase. If you have paid by card, we
@@ -77,9 +75,9 @@ const ReturnPolicy = () => {
         </p>
       </div>
 
-      <h3 className="heading-tertiary">Exchanges:</h3>
+      <h3 className="heading-pages">Exchanges:</h3>
       <div className="contact-us__para">
-        <p className="heading-primary">
+        <p className="heading-static">
           If you would like to exchange your item for a different product or
           variant, please indicate this when contacting our customer service
           team. We will assist you in processing the exchange and ensure that
@@ -87,9 +85,9 @@ const ReturnPolicy = () => {
         </p>
       </div>
 
-      <h3 className="heading-tertiary">Cancellations & Modifications:</h3>
+      <h3 className="heading-pages">Cancellations & Modifications:</h3>
       <div className="contact-us__para">
-        <p className="heading-primary">
+        <p className="heading-static">
           If the order or the item(s) in your order are not shipped,
           cancellation is possible. Click on ‘Orders’ and you will reach your
           order history. Click ‘Cancel’ for the order(s) you wish to cancel. You

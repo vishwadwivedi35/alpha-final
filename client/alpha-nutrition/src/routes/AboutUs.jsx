@@ -6,19 +6,16 @@ import logo from "../img/ALPHA-Logo-round-white.png";
 const AboutUs = () => {
   return (
     <div className="page-content page-content__about-us">
-      <h1 className="shop-heading heading-static">
+      <h1 className="heading--main-pages">
         <Link className="header__logo-box" to="/">
           <img src={logo} alt="Logo" className="header__logo" />
         </Link>
-        <h2 className="heading-primary--main heading-primary--static">
-          {" "}
-          About Us{" "}
-        </h2>
+        <h2 className="heading--main-static"> About Us </h2>
       </h1>
       <div className="contact-us__para">
-        <p className="heading-primary">
+        <p className="heading-static">
           <div className="contact-us__para">
-            <p className="heading-primary">
+            <p className="heading-static">
               Welcome to Alpha Muscle Nutrition! Founded in 2021, Alpha Muscle
               Nutrition is your premier destination for high-quality sports
               nutrition supplements. Our mission is to support fitness
@@ -31,7 +28,7 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="contact-us__para">
-            <p className="heading-primary">
+            <p className="heading-static">
               At Alpha Muscle Nutrition, our guiding philosophy revolves around
               a commitment to quality. We believe that true results stem from
               the finest ingredients, which is why we offer only premium,
@@ -43,7 +40,7 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="contact-us__para">
-            <p className="heading-primary">
+            <p className="heading-static">
               Whether you're looking to build muscle, improve recovery, or
               maintain daily nutritional needs, we are here to support you every
               step of the way. Join our community of athletes and fitness lovers

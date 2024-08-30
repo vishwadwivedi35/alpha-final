@@ -6,16 +6,14 @@ import logo from "../img/ALPHA-Logo-round-white.png";
 const TrackPage = () => {
   return (
     <div className="page-content">
-      <h1 className="shop-heading heading-static">
+      <h1 className="heading--main-pages">
         <Link className="header__logo-box" to="/">
           <img src={logo} alt="Logo" className="header__logo" />
         </Link>
-        <h1 className="heading-primary--main heading-primary--static">
-          Track Your Order With Us
-        </h1>
+        <h1 className="heading--main-static">Track Your Order With Us</h1>
       </h1>
       <div className="contact-us__para">
-        <p className="heading-primary">
+        <p className="heading-static">
           Easily stay updated on your order's status with our tracking page.
           Simply enter your tracking number to see real-time updates and
           expected delivery times.

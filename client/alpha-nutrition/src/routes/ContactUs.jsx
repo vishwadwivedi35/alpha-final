@@ -6,13 +6,11 @@ import logo from "../img/ALPHA-Logo-round-white.png";
 const ContactUs = () => {
   return (
     <div className="page-content page-content__contact-us">
-      <h1 className="shop-heading heading-static heading--contact-us">
+      <h1 className="heading--main-pages">
         <Link className="header__logo-box" to="/">
           <img src={logo} alt="Logo" className="header__logo" />
         </Link>
-        <h2 className="heading-primary--main heading-primary--static">
-          Contact Us
-        </h2>
+        <h2static className="heading--main-static">Contact Us</h2static>
       </h1>
       <div className="book__form book__form--contact-us">
         <form className="form contact-form">
@@ -41,15 +39,13 @@ const ContactUs = () => {
             </button>
           </div>
         </form>
-        <div className="contact-us__para">
-          <p className="heading-primary">
-            Customer Care Number: +91-9109410160
-          </p>
-          <p className="heading-primary">Email: info@alphamuscle.in</p>
-          <p className="heading-primary">
+        <div className="contact-us__para contact__us--paragraph">
+          <p className="heading-static">Customer Care Number: +91-9109410160</p>
+          <p className="heading-static">Email: info@alphamuscle.in</p>
+          <p className="heading-static">
             Address: G-1/1155, Man Sarovar Park, Delhi - 110032
           </p>
-          <p className="heading-primary">
+          <p className="heading-static">
             For Bulk Orders/Sales: alphamuscle4@gmail.com
           </p>
         </div>

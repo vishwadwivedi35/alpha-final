@@ -26,7 +26,8 @@ app.use(
       "http://localhost:9000",
       "https://res.cloudinary.com",
       "https://www.alphamuscle.in",
-      "https://api.www.alphamuscle.in",
+      "https://www.api.alphamuscle.in",
+      "https://api.alphamuscle.in",
       "https://alphamuscle.in",
     ],
   })

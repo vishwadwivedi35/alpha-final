@@ -10,9 +10,9 @@ const TrackPage = () => {
         <Link className="header__logo-box" to="/">
           <img src={logo} alt="Logo" className="header__logo" />
         </Link>
-        <h1 className="heading--main-static">Track Your Order With Us</h1>
       </h1>
       <div className="contact-us__para">
+        <h1 className="heading--main-static">Track Your Order With Us</h1>
         <p className="heading-static">
           Easily stay updated on your order's status with our tracking page.
           Simply enter your tracking number to see real-time updates and

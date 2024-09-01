@@ -10,8 +10,10 @@ const ContactUs = () => {
         <Link className="header__logo-box" to="/">
           <img src={logo} alt="Logo" className="header__logo" />
         </Link>
-        <h2static className="heading--main-static">Contact Us</h2static>
       </h1>
+      <h2 className="heading--main-static heading--main-static__contact-us">
+        Contact Us
+      </h2>
       <div className="book__form book__form--contact-us">
         <form className="form contact-form">
           {/* <h2 className="heading-primary--sub heading--contact-us">

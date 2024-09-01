@@ -10,15 +10,15 @@ const PrivacyPolicy = () => {
         <Link className="header__logo-box" to="/">
           <img src={logo} alt="Logo" className="header__logo" />
         </Link>
-        <h2 className="heading--main-static">Privacy Policy</h2>
       </h1>
       <div className="contact-us__para">
+        <h2 className="heading--main-static">Privacy Policy</h2>
         <p className="heading-static">
           At Alpha Muscle, we respect and value the privacy of our customers.
           This Privacy Policy explains how we collect, use, disclose, and
           safeguard your information when you visit our website, including any
           other media form, media channel, mobile website, or mobile application
-          related or connected thereto.
+          related or connected there to.
         </p>
       </div>
       <div className="contact-us__para">

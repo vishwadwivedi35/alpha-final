@@ -10,9 +10,9 @@ const TermsConditions = () => {
         <Link className="header__logo-box" to="/">
           <img src={logo} alt="Logo" className="header__logo" />
         </Link>
-        <h2 className="heading--main-static">Terms & Conditions</h2>
       </h1>
       <div className="contact-us__para">
+        <h2 className="heading--main-static">Terms & Conditions</h2>
         <p className="heading-static">Welcome to Alpha Muscle Nutrition!</p>
       </div>
       <div className="contact-us__para">

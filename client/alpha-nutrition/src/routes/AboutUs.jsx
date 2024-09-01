@@ -10,9 +10,9 @@ const AboutUs = () => {
         <Link className="header__logo-box" to="/">
           <img src={logo} alt="Logo" className="header__logo" />
         </Link>
-        <h2 className="heading--main-static"> About Us </h2>
       </h1>
       <div className="contact-us__para">
+        <h2 className="heading--main-static"> About Us </h2>
         <p className="heading-static">
           <div className="contact-us__para">
             <p className="heading-static">

@@ -10,9 +10,9 @@ const Support = () => {
         <Link className="header__logo-box" to="/">
           <img src={logo} alt="Logo" className="header__logo" />
         </Link>
-        <h2 className="heading--main-static">Support</h2>
       </h1>
       <div className="contact-us__para">
+        <h2 className="heading--main-static">Support</h2>
         <p className="heading-static">
           At Alphamuscle, we prioritize providing exceptional support to our
           valued customers. Whether you have questions about our products, need

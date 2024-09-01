@@ -10,9 +10,9 @@ const ReturnPolicy = () => {
         <Link className="header__logo-box" to="/">
           <img src={logo} alt="Logo" className="header__logo" />
         </Link>
-        <h1 className="heading--main-static">Return Policy</h1>
       </h1>
       <div className="contact-us__para">
+        <h1 className="heading--main-static">Return Policy</h1>
         <p className="heading-static">
           Welcome to Alpha Muscle Nutrition! We are thrilled to have you as a
           valued customer. If you're not entirely satisfied with your purchase,

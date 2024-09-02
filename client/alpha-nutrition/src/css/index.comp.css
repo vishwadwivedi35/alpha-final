@@ -3040,15 +3040,15 @@ body {
 }
 
 .header__slide--1 {
-  background-image: url(../img/1-p.png);
+  background-image: url(https://res.cloudinary.com/ddl3mgrmz/image/upload/v1725304478/1-p_usfbyc.webp);
 }
 
 .header__slide--2 {
-  background-image: url(../img/2nd-banner-p.png);
+  background-image: url(https://res.cloudinary.com/ddl3mgrmz/image/upload/v1725304479/2nd-banner-p_xjiyic.webp);
 }
 
 .header__slide--3 {
-  background-image: url(../img/3-p.png);
+  background-image: url(https://res.cloudinary.com/ddl3mgrmz/image/upload/v1725304478/3-p_kguix7.webp);
 }
 
 @media (max-width: 480px) {

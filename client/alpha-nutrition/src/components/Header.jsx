@@ -17,11 +17,6 @@ const Header = () => {
       </Link>
 
       <div className="header__text-box">
-        {/* <h1 className="heading-primary">
-          <span className="heading-primary--main">Alpha Nutrition</span>
-          {/* <span className="heading-primary--sub">is where life happens</span> */}
-        {/*</h1> */}
-
         <Link to="/shop" className="btn btn--white btn--animated btn--header">
           Discover Our Products
         </Link>

@@ -122,7 +122,7 @@ const Main = () => {
           <h2 className="heading-secondary">Our Popular Products</h2>
         </div>
 
-        <div className="row">
+        <div className="row row--main-cards">
           {products.map((product, index) => (
             <div className="col-1-of-3" key={product._id}>
               <div className="card">

@@ -242,7 +242,7 @@ const Cart = () => {
             <span className="total-amount">₹{calculateOverallTotal()}</span>
             <button
               onClick={handleProceedToCheckout}
-              className="btn btn--green"
+              className="btn btn--green btn--proceed-to-checkout"
             >
               Proceed to Checkout
             </button>

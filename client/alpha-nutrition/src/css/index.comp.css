@@ -454,6 +454,16 @@ body {
     font-size: small;
   }
 }
+@media only screen and (max-width: 37.5em) {
+  /* 600px and below */
+  .btn {
+    font-size: 1.2rem; /* Smaller font size for mobile */
+    padding: 1rem 2.5rem; /* Adjust padding for mobile */
+    bottom: 2rem; /* Adjust position for mobile */
+    border-radius: 5rem; /* Slightly smaller border-radius */
+  }
+}
+
 .btn--contact-us {
   background-color: #000;
 }
@@ -462,6 +472,9 @@ body {
 }
 .btn--contact-us::after {
   background-color: #000;
+}
+.btn--proceed-to-checkout {
+  margin-top: 2rem;
 }
 
 .checkout {
@@ -1234,6 +1247,10 @@ body {
     margin-right: 0;
     margin-bottom: 6rem;
   }
+  .row--main-cards [class^="col-"] {
+    display: flex;
+    justify-content: center;
+  }
 }
 @media only screen and (max-width: 56.25em) {
   .row [class^="col-"] {
@@ -1260,9 +1277,9 @@ body {
   width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem);
 }
 
-.header {
-  overflow: hidden; /* Ensure content doesn't overflow */
-  height: 85vh;
+/* .header {
+  overflow: hidden; 
+  height: 112vh;
   background-size: contain;
   background-position: center;
   position: relative;
@@ -1276,17 +1293,16 @@ body {
 .header__slider {
   display: flex;
   height: 100%;
-  width: 100%; /* Assuming you have 3 images */
-  animation: slideImages 12s infinite; /* 4s per image */
-}
+  width: 100%; 
+  animation: slideImages 12s infinite; 
 
 .header__slide {
   flex: 1 0 100%;
   background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* Define the animation for sliding images */
 @keyframes slideImages {
   0% {
     transform: translateX(0%);
@@ -1308,39 +1324,38 @@ body {
   }
 }
 
-/* Apply background images to each slide */
+
 .header__slide--1 {
-  background-image: url(../img/png2pdf.png);
+  background-image: url(../img/1-p.png);
 }
 
 .header__slide--2 {
-  background-image: url(../img/png2pdf.png);
+  background-image: url(../img/2nd-banner-p.png);
 }
 
 .header__slide--3 {
-  background-image: url(../img/png2pdf.png);
+  background-image: url(../img/3-p.png);
 }
 
 @media only screen and (max-width: 56.25em) {
   .header {
     margin-bottom: 6rem;
-    height: 27vh;
+    height: 30vh;
     background: cover;
     width: 100%;
   }
 
   .header__slider {
     width: 300%;
-    background-size: contain; /* Maintain aspect ratio */
+    background-size: contain; 
     background-position: center;
     background: no-repeat;
   }
 }
 
 @media only screen and (max-width: 37.5em) {
-  /* 600px */
   .header {
-    height: 32vh; /* Further adjust for smaller screens */
+    height: 20vh; 
   }
 
   .header__logo-box {
@@ -1348,7 +1363,7 @@ body {
     left: 0.5rem;
     transform: scale(0.7);
   }
-}
+} */
 
 /* @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
   .header {
@@ -2980,5 +2995,103 @@ body {
 
   .card__price-value {
     font-size: 4rem;
+  }
+}
+
+.header {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-color: #eeeeee;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__slider {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  animation: slideImages 12s infinite;
+}
+
+.header__slide {
+  flex: 1 0 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@keyframes slideImages {
+  0%,
+  33.33% {
+    transform: translateX(0%);
+  }
+  50%,
+  66.66% {
+    transform: translateX(-100%);
+  }
+  83.33%,
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+.header__slide--1 {
+  background-image: url(../img/1-p.png);
+}
+
+.header__slide--2 {
+  background-image: url(../img/2nd-banner-p.png);
+}
+
+.header__slide--3 {
+  background-image: url(../img/3-p.png);
+}
+
+@media (max-width: 480px) {
+  .header {
+    height: 50vh;
+    width: 100vw;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .header {
+    height: 60vh;
+    width: 100vw;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header {
+    height: 80vh;
+    width: 100vw;
+  }
+}
+
+@media (min-width: 1025px) {
+  .header {
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+.header__logo-box {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  transform: scale(0.8);
+}
+
+@media (max-width: 480px) {
+  .header__logo-box {
+    top: 1rem;
+    left: 1rem;
+    transform: scale(0.6);
   }
 }

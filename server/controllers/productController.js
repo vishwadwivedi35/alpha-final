@@ -1,8 +1,23 @@
 const Product = require("../models/product.models");
 
+// const getProducts = async (req, res) => {
+//   try {
+//     const products = await Product.find();
+//     res.status(200).json(products);
+//   } catch (err) {
+//     res.status(500).json({ error: "Server error" });
+//   }
+// };
 const getProducts = async (req, res) => {
   try {
-    const products = await Product.find();
+    const { category } = req.query; // Get the category from query parameters
+
+    let query = {};
+    if (category && category !== "All") {
+      query.category = category;
+    }
+
+    const products = await Product.find(query);
     res.status(200).json(products);
   } catch (err) {
     res.status(500).json({ error: "Server error" });

@@ -142,7 +142,7 @@
 //       case "Weight And Mass Gainers":
 //         return ["Malai Kulfi", "Rich Chocolate", "Keshar Pista"];
 //       case "Pre and Post Workouts":
-//         return ["Blackcurrent", "Blueberry"];
+//         return ["Blackcurrant", "Blueberry"];
 //       default:
 //         return [];
 //     }
@@ -151,6 +151,10 @@
 //   if (!product) {
 //     return <p>Loading...</p>;
 //   }
+
+//   const discountPercentage = product.mrp
+//     ? Math.round(((product.mrp - product.price) / product.mrp) * 100)
+//     : 0;
 
 //   return (
 //     <>
@@ -214,9 +218,24 @@
 //                 <p className="heading-tertiary u-margin-bottom-small">
 //                   {product.description}
 //                 </p>
-//                 <p className="heading-tertiary u-margin-bottom-small single-product__price">
-//                   Price: ₹{product.price}
-//                 </p>
+//                 <div className="single-product__pricing">
+//                   {product.mrp && (
+//                     <p className="heading-tertiary u-margin-bottom-small single-product__mrp">
+//                       MRP:{" "}
+//                       <span style={{ textDecoration: "line-through" }}>
+//                         ₹{product.mrp}
+//                       </span>
+//                     </p>
+//                   )}
+//                   <p className="heading-tertiary u-margin-bottom-small single-product__price">
+//                     Price: ₹{product.price}{" "}
+//                     {discountPercentage > 0 && (
+//                       <span className="single-product__discount">
+//                         ({discountPercentage}% off)
+//                       </span>
+//                     )}
+//                   </p>
+//                 </div>
 //                 <div className="line"></div>
 //                 <div className="quantity-control">
 //                   <button onClick={() => handleQuantityChange(quantity - 1)}>
@@ -290,6 +309,7 @@
 
 // export default SingleProduct;
 
+//SingleProduct.jsx
 import React, { useContext, useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
@@ -325,47 +345,16 @@ const SingleProduct = () => {
           setQuantity(cartItem.quantity);
         }
 
-        // Determine default size and flavour based on category
-        let initialSize = "";
-        let initialFlavour = "";
+        // Initialize selected size and flavour from fetched product data
+        setSelectedSize(
+          data.sizes && data.sizes.length > 0 ? data.sizes[0] : ""
+        );
+        setSelectedFlavour(
+          data.flavours && data.flavours.length > 0 ? data.flavours[0] : ""
+        );
 
-        switch (data.category) {
-          case "Whey Protein":
-            initialSize =
-              data.sizes && data.sizes.length > 0 ? data.sizes[0] : "1kg";
-            initialFlavour =
-              data.flavours && data.flavours.length > 0
-                ? data.flavours[0]
-                : "Rich Chocolate";
-            break;
-          case "Weight And Mass Gainers":
-            initialSize =
-              data.sizes && data.sizes.length > 0 ? data.sizes[0] : "2kg";
-            initialFlavour =
-              data.flavours && data.flavours.length > 0
-                ? data.flavours[0]
-                : "Malai Kulfi";
-            break;
-          case "Pre and Post Workouts":
-            initialSize =
-              data.sizes && data.sizes.length > 0 ? data.sizes[0] : "100gm";
-            initialFlavour =
-              data.flavours && data.flavours.length > 0
-                ? data.flavours[0]
-                : "Blackcurrant";
-            break;
-          default:
-            initialSize =
-              data.sizes && data.sizes.length > 0 ? data.sizes[0] : "";
-            initialFlavour =
-              data.flavours && data.flavours.length > 0 ? data.flavours[0] : "";
-        }
-
-        setSelectedSize(initialSize);
-        setSelectedFlavour(initialFlavour);
-
-        console.log("Initialized size:", initialSize); // Debugging
-        console.log("Initialized flavour:", initialFlavour); // Debugging
+        console.log("Initialized size:", data.sizes[0]); // Debugging
+        console.log("Initialized flavour:", data.flavours[0]); // Debugging
       } catch (error) {
         console.error("Error fetching product:", error);
       }
@@ -375,7 +364,7 @@ const SingleProduct = () => {
   }, [id, cartItems]);
 
   const handleAddToCart = () => {
-    // Use the selected or fallback size and flavour
+    // Use the selected size and flavour
     const size = selectedSize;
     const flavour = selectedFlavour;
 
@@ -412,32 +401,6 @@ const SingleProduct = () => {
 
   const handleThumbnailClick = (index) => {
     setCurrentImageIndex(index);
-  };
-
-  const sizeOptions = () => {
-    switch (product.category) {
-      case "Whey Protein":
-        return ["1kg", "2kg"];
-      case "Weight And Mass Gainers":
-        return ["1kg", "2kg", "3kg", "5kg"];
-      case "Pre and Post Workouts":
-        return ["100gm", "200gm", "250gm", "300gm"];
-      default:
-        return [];
-    }
-  };
-
-  const flavourOptions = () => {
-    switch (product.category) {
-      case "Whey Protein":
-        return ["Rich Chocolate", "Kaju Keshar Pista", "Malai Kulfi", "Mango"];
-      case "Weight And Mass Gainers":
-        return ["Malai Kulfi", "Rich Chocolate", "Keshar Pista"];
-      case "Pre and Post Workouts":
-        return ["Blackcurrant", "Blueberry"];
-      default:
-        return [];
-    }
   };
 
   if (!product) {
@@ -539,7 +502,7 @@ const SingleProduct = () => {
                     +
                   </button>
                 </div>
-                {sizeOptions().length > 0 && (
+                {product.sizes && product.sizes.length > 0 && (
                   <>
                     <div className="size-selection">
                       <label htmlFor="size" className="heading-tertiary">
@@ -551,7 +514,7 @@ const SingleProduct = () => {
                         onChange={(e) => setSelectedSize(e.target.value)}
                         className="btn btn--green btn--dropdown"
                       >
-                        {sizeOptions().map((size) => (
+                        {product.sizes.map((size) => (
                           <option key={size} value={size}>
                             {size}
                           </option>
@@ -560,7 +523,7 @@ const SingleProduct = () => {
                     </div>
                   </>
                 )}
-                {flavourOptions().length > 0 && (
+                {product.flavours && product.flavours.length > 0 && (
                   <div className="flavour-selection">
                     <label htmlFor="flavours" className="heading-tertiary">
                       Flavours:
@@ -571,7 +534,7 @@ const SingleProduct = () => {
                       onChange={(e) => setSelectedFlavour(e.target.value)}
                       className="btn btn--green btn--dropdown"
                     >
-                      {flavourOptions().map((flavour) => (
+                      {product.flavours.map((flavour) => (
                         <option key={flavour} value={flavour}>
                           {flavour}
                         </option>

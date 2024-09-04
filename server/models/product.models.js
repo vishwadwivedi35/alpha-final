@@ -25,11 +25,6 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  images: [
-    {
-      type: String,
-    },
-  ],
   category: {
     type: String,
     enum: [
@@ -47,7 +42,8 @@ const productSchema = new mongoose.Schema({
   ],
   flavours: [
     {
-      type: String,
+      name: { type: String, required: true },
+      images: [{ type: String }],
     },
   ],
 });

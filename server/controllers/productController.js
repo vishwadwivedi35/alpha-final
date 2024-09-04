@@ -1,13 +1,5 @@
 const Product = require("../models/product.models");
 
-// const getProducts = async (req, res) => {
-//   try {
-//     const products = await Product.find();
-//     res.status(200).json(products);
-//   } catch (err) {
-//     res.status(500).json({ error: "Server error" });
-//   }
-// };
 const getProducts = async (req, res) => {
   try {
     const { category } = req.query; // Get the category from query parameters
@@ -26,7 +18,8 @@ const getProducts = async (req, res) => {
 
 const postProduct = async (req, res) => {
   try {
-    const { name, description, price, mrp, images, category } = req.body;
+    const { name, description, price, flavours, mrp, images, category } =
+      req.body;
 
     if (!mrp || mrp <= price) {
       return res
@@ -38,8 +31,9 @@ const postProduct = async (req, res) => {
       name,
       description,
       price,
-      mrp, // Ensure the MRP is saved
-      images,
+      mrp,
+      flavours,
+      // images,
       category,
     });
 

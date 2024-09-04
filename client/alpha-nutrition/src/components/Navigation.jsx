@@ -76,7 +76,10 @@ const Navigation = () => {
           </li>
           <li className="navigation__item">
             {currentUser ? (
-              <span className="navigation__link" onClick={signOutHandler}>
+              <span
+                className="navigation__link navigation__link--sign-out"
+                onClick={signOutHandler}
+              >
                 SIGN OUT
               </span>
             ) : (

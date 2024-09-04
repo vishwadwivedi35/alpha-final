@@ -136,15 +136,10 @@ const ShopPage = () => {
         return product.category === category;
       })
       .map((product) => {
-        // Ensure flavours and images exist and are arrays
-        const firstFlavour = product.flavours && product.flavours[0];
-        console.log(firstFlavour);
-        const firstImage =
-          firstFlavour && firstFlavour.images && firstFlavour.images[0];
+        // Log the product object for debugging
+        console.log("Product object:", product);
 
-        // Fallback image if no images exist
-        const image = firstImage || "https://via.placeholder.com/300";
-
+        // Pass the product's flavours directly to the Card component
         return (
           <Card
             key={product._id}
@@ -152,11 +147,41 @@ const ShopPage = () => {
             name={product.name}
             description={product.description}
             price={product.price}
-            image={image} // Use the fetched first image
+            flavours={product.flavours} // Ensure flavours are passed to the Card
           />
         );
       });
   };
+
+  // const renderProductCards = () => {
+  //   return products
+  //     .filter((product) => {
+  //       if (category === "All") return true;
+  //       return product.category === category;
+  //     })
+  //     .map((product) => {
+  //       // Ensure flavours and images exist and are arrays
+  //       const firstFlavour = product.flavours && product.flavours[0];
+  //       console.log("First Flavour:", firstFlavour);
+
+  //       const firstImage =
+  //         firstFlavour && firstFlavour.images && firstFlavour.images[0];
+  //       console.log("First Image:", firstImage);
+
+  //       // Fallback image if no images exist
+  //       const image = firstImage || "https://via.placeholder.com/300";
+  //       return (
+  //         <Card
+  //           key={product._id}
+  //           id={product._id}
+  //           name={product.name}
+  //           description={product.description}
+  //           price={product.price}
+  //           flavours={product.}
+  //         />
+  //       );
+  //     });
+  // };
 
   return (
     <section className="section-shop">

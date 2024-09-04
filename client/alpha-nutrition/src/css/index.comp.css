@@ -1600,6 +1600,10 @@ body {
   color: rgba(215, 35, 35, 0.8);
   transform: translateX(1rem);
 }
+.navigation__link--sign-out {
+  color: whitesmoke;
+  font-size: x-large;
+}
 
 .navigation__icon {
   position: relative;
@@ -1678,7 +1682,7 @@ body {
 
 .section-features {
   overflow: hidden;
-  height: 100vh;
+  height: 70vh;
   background-size: contain;
   background-position: center;
   position: relative;

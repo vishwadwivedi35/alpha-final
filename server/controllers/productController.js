@@ -18,8 +18,7 @@ const getProducts = async (req, res) => {
 
 const postProduct = async (req, res) => {
   try {
-    const { name, description, price, flavours, mrp, images, category } =
-      req.body;
+    const { name, description, price, flavours, mrp, category } = req.body;
 
     if (!mrp || mrp <= price) {
       return res
@@ -33,7 +32,6 @@ const postProduct = async (req, res) => {
       price,
       mrp,
       flavours,
-      // images,
       category,
     });
 

@@ -121,57 +121,72 @@ const Cart = () => {
       ) : (
         <>
           <ul>
-            {cartItems.map((item) => (
-              <li
-                key={`${item._id}-${item.selectedSize}-${item.selectedFlavour}`}
-                className="cart-item"
-              >
-                <img src={item.images[0]} alt={item.name} />
-                <div>
-                  <h2>{item.name}</h2>
-                  <p>{item.description}</p>
-                  <p>Size: {item.selectedSize || "Not Selected"}</p>
-                  <p>Flavour: {item.selectedFlavour || "Not Selected"}</p>
-                  <p className="price">
-                    Total Price: ₹
-                    {calculateTotalPrice(item.price, item.quantity)}
-                  </p>
-                  <div className="quantity-control">
-                    <button
-                      onClick={() =>
-                        updateCartItem(
-                          item._id,
-                          item.quantity - 1,
-                          item.selectedSize,
-                          item.selectedFlavour
-                        )
-                      }
-                    >
-                      -
-                    </button>
-                    <span>{item.quantity}</span>
-                    <button
-                      onClick={() =>
-                        updateCartItem(
-                          item._id,
-                          item.quantity + 1,
-                          item.selectedSize,
-                          item.selectedFlavour
-                        )
-                      }
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-                <button
-                  className="btn btn--green"
-                  onClick={() => removeFromCart(item._id)}
+            {cartItems.map((item) => {
+              // Find the selected flavour object
+              const selectedFlavourObject = item.flavours.find(
+                (flavour) => flavour.flavourName === item.selectedFlavour
+              );
+
+              // Get the images array for the selected flavour
+              const images = selectedFlavourObject
+                ? selectedFlavourObject.images
+                : [];
+
+              return (
+                <li
+                  key={`${item._id}-${item.selectedSize}-${item.selectedFlavour}`}
+                  className="cart-item"
                 >
-                  Remove
-                </button>
-              </li>
-            ))}
+                  <img
+                    src={images[0] || "default-image-url.jpg"}
+                    alt={item.name}
+                  />
+                  <div>
+                    <h2>{item.name}</h2>
+                    <p>{item.description}</p>
+                    <p>Size: {item.selectedSize || "Not Selected"}</p>
+                    <p>Flavour: {item.selectedFlavour || "Not Selected"}</p>
+                    <p className="price">
+                      Total Price: ₹
+                      {calculateTotalPrice(item.price, item.quantity)}
+                    </p>
+                    <div className="quantity-control">
+                      <button
+                        onClick={() =>
+                          updateCartItem(
+                            item._id,
+                            item.quantity - 1,
+                            item.selectedSize,
+                            item.selectedFlavour
+                          )
+                        }
+                      >
+                        -
+                      </button>
+                      <span>{item.quantity}</span>
+                      <button
+                        onClick={() =>
+                          updateCartItem(
+                            item._id,
+                            item.quantity + 1,
+                            item.selectedSize,
+                            item.selectedFlavour
+                          )
+                        }
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                  <button
+                    className="btn btn--green"
+                    onClick={() => removeFromCart(item._id)}
+                  >
+                    Remove
+                  </button>
+                </li>
+              );
+            })}
           </ul>
 
           {address ? (

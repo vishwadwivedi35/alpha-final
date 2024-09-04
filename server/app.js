@@ -39,8 +39,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/api/products", productRoutes);
 app.use(bodyParser.json());
+
+app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
 
 // Serve static files from the React app

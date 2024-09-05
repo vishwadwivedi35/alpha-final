@@ -485,7 +485,7 @@ const SingleProduct = () => {
                 <h1 className="heading-tertiary u-margin-bottom-small heading-tertiary__singleProduct">
                   {product.name}
                 </h1>
-                <p className="heading-tertiary u-margin-bottom-small">
+                <p className="heading-tertiary u-margin-bottom-small heading-tertiary__description">
                   {product.description}
                 </p>
                 <div className="single-product__pricing">
@@ -508,11 +508,17 @@ const SingleProduct = () => {
                 </div>
                 <div className="line"></div>
                 <div className="quantity-control">
-                  <button onClick={() => handleQuantityChange(quantity - 1)}>
+                  <button
+                    className="quantity-button"
+                    onClick={() => handleQuantityChange(quantity - 1)}
+                  >
                     -
                   </button>
-                  <span className="heading-tertiary">{quantity}</span>
-                  <button onClick={() => handleQuantityChange(quantity + 1)}>
+                  <span className="quantity-display">{quantity}</span>
+                  <button
+                    className="quantity-button"
+                    onClick={() => handleQuantityChange(quantity + 1)}
+                  >
                     +
                   </button>
                 </div>

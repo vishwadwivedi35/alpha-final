@@ -323,6 +323,7 @@ const SingleProduct = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedFlavour, setSelectedFlavour] = useState("");
+  const [selectedFreebie, setSelectedFreebie] = useState("");
   const [currentFlavourImages, setCurrentFlavourImages] = useState([]);
   const navigate = useNavigate();
 
@@ -349,6 +350,9 @@ const SingleProduct = () => {
         setSelectedSize(
           data.sizes && data.sizes.length > 0 ? data.sizes[0] : ""
         );
+        setSelectedFreebie(
+          data.freebies && data.freebies.length > 0 ? data.freebies[0] : ""
+        );
         if (data.flavours && data.flavours.length > 0) {
           setSelectedFlavour(data.flavours[0].flavourName);
           setCurrentFlavourImages(data.flavours[0].images);
@@ -356,6 +360,7 @@ const SingleProduct = () => {
 
         console.log("Initialized size:", data.sizes[0]); // Debugging
         console.log("Initialized flavour:", data.flavours[0].flavourName); // Debugging
+        console.log("Initialized freebie:", data.freebies[0]); // Debugging
       } catch (error) {
         console.error("Error fetching product:", error);
       }
@@ -381,15 +386,18 @@ const SingleProduct = () => {
     // Use the selected size and flavour
     const size = selectedSize;
     const flavour = selectedFlavour;
+    const freebie = selectedFreebie;
 
     console.log("Adding to cart with size:", size); // Debugging
     console.log("Adding to cart with flavour:", flavour); // Debugging
+    console.log("Adding to cart with freebie:", freebie); // Debugging
 
     addToCart({
       ...product,
       quantity,
       selectedSize: size,
       selectedFlavour: flavour,
+      selectedFreebie: freebie,
     });
     navigate("/cart"); // Redirect to cart page after adding to cart
   };
@@ -564,6 +572,27 @@ const SingleProduct = () => {
                       ))}
                     </select>
                   </div>
+                )}
+                {product.freebies && product.freebies.length > 0 && (
+                  <>
+                    <div className="size-selection">
+                      <label htmlFor="freebie" className="heading-tertiary">
+                        Select Your Freebie!!! :
+                      </label>
+                      <select
+                        id="freebie"
+                        value={selectedFreebie}
+                        onChange={(e) => setSelectedFreebie(e.target.value)}
+                        className="btn btn--green btn--dropdown"
+                      >
+                        {product.freebies.map((freebie) => (
+                          <option key={freebie} value={freebie}>
+                            {freebie}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </>
                 )}
                 <button
                   onClick={handleAddToCart}

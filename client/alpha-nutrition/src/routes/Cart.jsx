@@ -65,6 +65,7 @@ const Cart = () => {
           longDescription,
           selectedSize,
           selectedFlavour,
+          selectedFreebie,
         }) => ({
           product: _id,
           name,
@@ -74,6 +75,7 @@ const Cart = () => {
           price,
           selectedSize,
           selectedFlavour,
+          selectedFreebie,
         })
       ),
       totalPrice: calculateOverallTotal(),
@@ -134,7 +136,7 @@ const Cart = () => {
 
               return (
                 <li
-                  key={`${item._id}-${item.selectedSize}-${item.selectedFlavour}`}
+                  key={`${item._id}-${item.selectedSize}-${item.selectedFlavour}-${item.selectedFreebie}`}
                   className="cart-item"
                 >
                   <img
@@ -146,6 +148,7 @@ const Cart = () => {
                     <p>{item.description}</p>
                     <p>Size: {item.selectedSize || "Not Selected"}</p>
                     <p>Flavour: {item.selectedFlavour || "Not Selected"}</p>
+                    <p>Freebie: {item.selectedFreebie || "Not Selected"}</p>
                     <p className="price">
                       Total Price: ₹
                       {calculateTotalPrice(item.price, item.quantity)}
@@ -157,7 +160,8 @@ const Cart = () => {
                             item._id,
                             item.quantity - 1,
                             item.selectedSize,
-                            item.selectedFlavour
+                            item.selectedFlavour,
+                            item.selectedFreebie
                           )
                         }
                       >
@@ -170,7 +174,8 @@ const Cart = () => {
                             item._id,
                             item.quantity + 1,
                             item.selectedSize,
-                            item.selectedFlavour
+                            item.selectedFlavour,
+                            item.selectedFreebie
                           )
                         }
                       >

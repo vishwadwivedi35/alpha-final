@@ -1,10 +1,10 @@
 // src/components/Main.jsx
 import React, { useState, useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
-import img1 from "../img/BULK-1kg-CHOCOLATE.png";
-import img2 from "../img/hydro-iso-2lbs-malai-kulfi.png";
-import img3 from "../img/LEAN-1kg-COCOLATE.png";
-import img4 from "../img/whey-plus-1kg-KKP.png";
+import img1 from "../img/category3.png";
+import img2 from "../img/category2.png";
+import img3 from "../img/category1.png";
+import img4 from "../img/category4.png";
 import "../css/index.comp.css";
 const Main = () => {
   const [products, setProducts] = useState([]);

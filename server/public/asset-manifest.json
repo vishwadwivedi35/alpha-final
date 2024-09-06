@@ -1,15 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.c929d8ce.css",
-    "main.js": "/static/js/main.9f6020d3.js",
+    "main.js": "/static/js/main.842a99d9.js",
     "static/js/453.be082c87.chunk.js": "/static/js/453.be082c87.chunk.js",
     "static/media/asa.png": "/static/media/asa.f67639b0747294ceba6a.png",
     "static/media/ALPHA-Logo-round-white.png": "/static/media/ALPHA-Logo-round-white.92d6e056a6d0a00ea93e.png",
     "static/media/hydro-iso-2lbs-malai-kulfi.png": "/static/media/hydro-iso-2lbs-malai-kulfi.333c15b93f46a0bc3028.png",
     "static/media/ALPHA-Logo-round-black.png": "/static/media/ALPHA-Logo-round-black.022ac546c2089cdad86e.png",
-    "static/media/BULK-1kg-CHOCOLATE.png": "/static/media/BULK-1kg-CHOCOLATE.09153965f9c6ed4882df.png",
     "static/media/LEAN-1kg-COCOLATE.png": "/static/media/LEAN-1kg-COCOLATE.dad98593929d0060c69f.png",
     "static/media/whey-plus-1kg-KKP.png": "/static/media/whey-plus-1kg-KKP.fff6eaedc3f909ce3956.png",
+    "static/media/category2.png": "/static/media/category2.40cfc093e537d3994e93.png",
+    "static/media/category3.png": "/static/media/category3.5b67916748676754645c.png",
+    "static/media/category1.png": "/static/media/category1.22c8a60e3a76ddd6b3d7.png",
+    "static/media/category4.png": "/static/media/category4.cdc3736a51622cfabac1.png",
     "static/media/img1.jpg": "/static/media/img1.30ca9f0b8745628c9616.jpg",
     "static/media/alpha-logo.jpg": "/static/media/alpha-logo.51aa3512464300a579d3.jpg",
     "static/media/slick.svg": "/static/media/slick.7ba97953187dc2907930.svg",
@@ -18,11 +21,11 @@
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
     "main.c929d8ce.css.map": "/static/css/main.c929d8ce.css.map",
-    "main.9f6020d3.js.map": "/static/js/main.9f6020d3.js.map",
+    "main.842a99d9.js.map": "/static/js/main.842a99d9.js.map",
     "453.be082c87.chunk.js.map": "/static/js/453.be082c87.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c929d8ce.css",
-    "static/js/main.9f6020d3.js"
+    "static/js/main.842a99d9.js"
   ]
 }

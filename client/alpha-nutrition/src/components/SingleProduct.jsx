@@ -372,11 +372,11 @@ const SingleProduct = () => {
             {product.longDescription ||
               "No additional description available."}{" "}
           </p>{" "}
-          <h2>You Might Also Like</h2>
           {loading ? (
             <p>Loading...</p>
           ) : (
             <div className="section-card section__you-might-also-like">
+              <h2>You Might Also Like</h2>
               <div className="row">{renderProductCards()}</div>
             </div>
           )}

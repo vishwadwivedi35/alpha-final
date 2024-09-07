@@ -3556,17 +3556,13 @@ body {
 }
 
 .section__you-might-also-like .card {
-  margin: 20px;
-  width: calc(25% - 40px); /* adjust width to fit 4 cards per row */
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* subtle shadow */
-  transition: box-shadow 0.3s ease-in-out; /* add transition for hover effect */
 }
 
 .section__you-might-also-like .card:hover {
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); /* golden glow on hover */
-  transform: translateY(-5px); /* slight lift on hover */
 }
 
 .section__you-might-also-like .card img {
@@ -3589,4 +3585,12 @@ body {
 .section__you-might-also-like .card .card-content p {
   font-size: 16px;
   color: #666;
+}
+.section__you-might-also-like h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  text-align: center;
 }

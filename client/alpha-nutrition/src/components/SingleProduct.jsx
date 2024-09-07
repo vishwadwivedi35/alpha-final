@@ -367,11 +367,15 @@ const SingleProduct = () => {
             {" "}
             Product Description{" "}
           </h1>{" "}
-          <p className="long-description--para">
-            {" "}
-            {product.longDescription ||
-              "No additional description available."}{" "}
-          </p>{" "}
+          {/* <p className="long-description--para"> */}
+          <p
+            className="long-description--para"
+            dangerouslySetInnerHTML={{
+              __html: `<div>${product.longDescription
+                .replace(/\n/g, "<br />")
+                .replace(/\r/g, "")}</div>`,
+            }}
+          />{" "}
           {loading ? (
             <p>Loading...</p>
           ) : (

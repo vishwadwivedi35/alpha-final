@@ -3826,3 +3826,59 @@ body {
   cursor: pointer;
   font-weight: bold;
 }
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 480px) {
+  .slick-slide {
+    margin-left: 5rem;
+  }
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black; /* Adjust button color */
+}
+.slide-prev {
+  left: -67px;
+  background-color: black;
+  color: black;
+}
+.slide-next {
+  background-color: black;
+  color: black;
+}
+
+/* Slider button styles */
+.slider-btn {
+  background-color: red; /* Change button color to red */
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 50%; /* Optional: to make the buttons circular */
+}
+
+.slider-btn:hover {
+  background-color: darkred; /* Darker shade when hovered */
+}
+
+.slider-btn:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+.slick-next,
+.slick-next:focus,
+.slick-next:hover,
+.slick-prev,
+.slick-prev:focus,
+.slick-prev:hover {
+  background: black;
+  color: #0000;
+  outline: none;
+}

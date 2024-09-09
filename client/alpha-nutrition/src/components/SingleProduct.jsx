@@ -2,8 +2,35 @@ import React, { useContext, useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import logo from "../img/ALPHA-Logo-round-white.png";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "../css/index.comp.css"; // Add your custom CSS here
 import Card from "../components/Card";
+
+const sliderSettings = {
+  dots: true, // Enables dot indicators below the slider
+  infinite: true, // Allows infinite sliding
+  speed: 500, // Transition speed in ms
+  slidesToShow: 3, // Number of cards visible at a time
+  slidesToScroll: 1, // Number of cards to scroll at a time
+  responsive: [
+    {
+      breakpoint: 1024, // Below this width, show fewer slides
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
 
 const SingleProduct = () => {
   const { id } = useParams();
@@ -394,8 +421,10 @@ const SingleProduct = () => {
           ) : (
             <div className="section-card section__you-might-also-like">
               <h2>You Might Also Like</h2>
-              <div className="row">{renderProductCards()}</div>
+              {/* <div className="row"> */}
+              <Slider {...sliderSettings}>{renderProductCards()}</Slider>
             </div>
+            // </div>
           )}
         </section>{" "}
       </div>{" "}

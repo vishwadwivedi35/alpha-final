@@ -35,7 +35,9 @@ const Main = () => {
     <main>
       <section className="section-about">
         <div className="u-center-text u-margin-bottom-big">
-          <h2 className="heading-secondary">Product Categories</h2>
+          <h2 className="heading-secondary heading-secondary--categories">
+            Product Categories
+          </h2>
         </div>
 
         <div className="row">

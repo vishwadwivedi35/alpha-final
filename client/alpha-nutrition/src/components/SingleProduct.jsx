@@ -17,6 +17,8 @@ const SingleProduct = () => {
   const [selectedFlavour, setSelectedFlavour] = useState("");
   const [selectedFreebie, setSelectedFreebie] = useState("");
   const [currentFlavourImages, setCurrentFlavourImages] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -93,6 +95,16 @@ const SingleProduct = () => {
     }
   }, [selectedFlavour, product]);
 
+  const handleImageClick = (image) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  // Function to close the modal
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   const handleAddToCart = () => {
     // Use the selected size and flavour
     const size = selectedSize;
@@ -160,23 +172,6 @@ const SingleProduct = () => {
     ? Math.round(((product.mrp - product.price) / product.mrp) * 100)
     : 0;
 
-  // const renderProductCards = () => {
-  //   return products
-  //     .filter(
-  //       (product) =>
-  //         product.category === getAlternativeCategory(product.category)
-  //     )
-  //     .map((product) => (
-  //       <Card
-  //         key={product._id}
-  //         id={product._id}
-  //         name={product.name}
-  //         description={product.description}
-  //         price={product.price}
-  //         flavours={product.flavours}
-  //       />
-  //     ));
-  // };
   const renderProductCards = () => {
     const alternativeCategory = getAlternativeCategories(product.category)[0]; // Get the first alternative category
     return products
@@ -209,25 +204,43 @@ const SingleProduct = () => {
           <div className="row">
             <div className="col-1-of-2">
               <div className="single-product">
-                <div className="single-product__images">
-                  <button
-                    onClick={handlePreviousImage}
-                    className="btn btn--green slider-button slider-button--left"
-                  >
-                    &lt;
-                  </button>
+                {/* <div className="single-product__images">
                   <img
                     src={currentFlavourImages[currentImageIndex]}
                     alt={product.name}
                     className="single-product__image"
+                    onClick={() => handleImageClick(flavour.images[0])} // Open modal on click
+                    style={{ cursor: "pointer" }}
                   />
-                  <button
-                    onClick={handleNextImage}
-                    className="btn btn--green slider-button slider-button--right"
-                  >
-                    &gt;
-                  </button>
+                </div> */}
+                <div className="single-product__images">
+                  {currentFlavourImages.map((image, index) => (
+                    <img
+                      src={currentFlavourImages[currentImageIndex]} // Display the current image based on the index
+                      alt={`${product.name} image ${currentImageIndex + 1}`}
+                      className="single-product__image"
+                      onClick={() =>
+                        handleImageClick(
+                          currentFlavourImages[currentImageIndex]
+                        )
+                      } // Open modal on click
+                      style={{ cursor: "pointer" }}
+                    />
+                  ))}
                 </div>
+                {/* Modal for zoomed-in image */}
+                {isModalOpen && (
+                  <div className="modal">
+                    <span className="modal-close" onClick={closeModal}>
+                      &times;
+                    </span>
+                    <img
+                      src={selectedImage}
+                      alt="Zoomed"
+                      className="modal-content"
+                    />
+                  </div>
+                )}
                 <div className="single-product__preview">
                   <div className="single-product__thumbnails">
                     {currentFlavourImages.map((image, index) => (

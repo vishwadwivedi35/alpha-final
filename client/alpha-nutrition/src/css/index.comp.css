@@ -357,6 +357,14 @@ body {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 37.5em) {
+  .btn,
+  .btn:link,
+  .btn:visited {
+    font-size: 1.2rem;
+  }
+}
+
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
@@ -3681,4 +3689,140 @@ body {
     font-size: 24px;
     margin-bottom: 25px;
   }
+}
+
+/* cart updates */
+@media (max-width: 480px) {
+  .cart {
+    padding: 1rem;
+  }
+
+  .cart h1 {
+    font-size: 2rem;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+
+  .quantity-control {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .cart-total {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn--proceed-to-checkout {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Mobile Devices (e.g., iPhone 12, Galaxy S20) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .cart h1 {
+    font-size: 2.2rem;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .cart-total {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn--proceed-to-checkout {
+    width: 100%;
+  }
+}
+
+/* Tablets (e.g., iPad, iPad Mini) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cart h1 {
+    font-size: 2.5rem;
+  }
+
+  .cart-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+  }
+
+  .quantity-control button {
+    font-size: 1.4rem;
+  }
+
+  .cart-total {
+    padding: 2.5rem;
+  }
+}
+
+/* Desktop Devices (e.g., Laptops, Large Monitors) */
+@media (min-width: 1025px) {
+  .cart {
+    padding: 3rem;
+  }
+
+  .cart-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+  }
+
+  .cart-total {
+    padding: 3rem;
+  }
+
+  .btn--proceed-to-checkout {
+    padding: 1.5rem 3rem;
+    font-size: 1.8rem;
+  }
+}
+
+/* Modal styles */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
 }

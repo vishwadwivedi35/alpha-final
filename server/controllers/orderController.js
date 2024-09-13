@@ -61,7 +61,7 @@ const createOrder = async (orderData) => {
     }
     return {
       ...product,
-      product: mongoose.Types.ObjectId(product.product),
+      product: new mongoose.Types.ObjectId(product.product),
     };
   });
 

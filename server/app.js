@@ -29,6 +29,7 @@ app.use(
       "https://www.api.alphamuscle.in",
       "https://api.alphamuscle.in",
       "https://alphamuscle.in",
+      "https://api.alphamuscle.in/api/products",
     ],
   })
 );
@@ -41,9 +42,10 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 
+app.use("/api/payment", paymentRoutes);
+
 app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
-app.use("/api/payment", paymentRoutes);
 
 app.use(express.static(path.join(__dirname, "public")));
 

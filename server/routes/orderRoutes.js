@@ -20,8 +20,8 @@ const transporter = nodemailer.createTransport({
 
 router.post("/instamojo/webhook", async (req, res) => {
   try {
-    const secret = process.env.INSTAMOJO_WEBHOOK_SECRET; // Set your webhook secret in .env
-    const instamojoSignature = req.headers["x-instamojo-signature"]; // Get signature from headers
+    const secret = process.env.INSTAMOJO_WEBHOOK_SECRET;
+    const instamojoSignature = req.headers["x-instamojo-signature"];
 
     // Validate webhook signature
     const payloadBody = JSON.stringify(req.body);

@@ -42,8 +42,20 @@ const productSchema = new mongoose.Schema({
   ],
   flavours: [
     {
-      name: { type: String, required: true },
-      images: [{ type: String }],
+      flavourName: {
+        type: String,
+        required: true,
+      },
+      images: [
+        {
+          type: String,
+        },
+      ],
+    },
+  ],
+  freebies: [
+    {
+      type: String,
     },
   ],
 });

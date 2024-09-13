@@ -4,7 +4,6 @@ import Home from "./routes/Home";
 import Cart from "./routes/Cart";
 import Checkout from "./routes/Checkout";
 import SingleProduct from "./components/SingleProduct";
-// import Error from "./pages/Error";
 import "./App.css";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -17,6 +16,7 @@ import TermsConditions from "./routes/TermsConditions";
 import PrivacyPolicy from "./routes/PrivacyPolicy";
 import TrackPage from "./routes/TrackPage";
 import AboutUs from "./routes/AboutUs";
+import CheckoutSummary from "./routes/CheckoutSummary";
 
 function App() {
   return (
@@ -25,6 +25,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout-summary" element={<CheckoutSummary />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/product/:id" element={<SingleProduct />} />
         <Route path="/shop" element={<ShopPage />} />

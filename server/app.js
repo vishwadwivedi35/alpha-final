@@ -7,9 +7,9 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const productRoutes = require("./routes/productRoutes");
 const orderRoutes = require("./routes/orderRoutes");
-// const apiRoutes = require("./routes/api");
+const paymentRoutes = require("./routes/paymentRoutes");
 
-app.use(express.json()); // Middleware to parse JSON bodies
+app.use(express.json());
 dotenv.config();
 
 const mongoUri = process.env.MONGO_URI;
@@ -43,11 +43,10 @@ app.use(bodyParser.json());
 
 app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
+app.use("/api/payment", paymentRoutes);
 
-// Serve static files from the React app
 app.use(express.static(path.join(__dirname, "public")));
 
-// Catchall handler for any requests that don't match API routes
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });

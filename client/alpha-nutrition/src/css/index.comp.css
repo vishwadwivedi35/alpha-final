@@ -3882,3 +3882,167 @@ body {
   color: #0000;
   outline: none;
 }
+
+/* Checkout Summary Container */
+.checkout-summary {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 10rem;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #d72323;
+}
+
+.checkout-summary h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Cart Items */
+.checkout-summary ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.checkout-summary ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+}
+
+.checkout-summary ul li img {
+  max-width: 80px;
+  border-radius: 8px;
+}
+
+.checkout-summary ul li div {
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.checkout-summary ul li h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.checkout-summary ul li p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Subtotal */
+.subtotal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.subtotal h2 {
+  margin: 0;
+}
+
+/* Coupon Section */
+.coupon-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.coupon-input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.coupon-input:focus {
+  border-color: #28a745;
+  outline: none;
+}
+
+.coupon-section button {
+  padding: 10px 20px;
+  background-color: #d72323;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.coupon-section button:hover {
+  background-color: #d72323;
+}
+
+/* Price Summary */
+.price-summary {
+  margin-top: 30px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.price-summary p {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+/* Proceed to Pay Button */
+.btn--proceed-to-pay {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2rem;
+  background-color: #d72323;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.btn--proceed-to-pay:hover {
+  background-color: #d72323;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .checkout-summary {
+    padding: 15px;
+  }
+
+  .coupon-section {
+    flex-direction: column;
+  }
+
+  .coupon-input {
+    margin-bottom: 15px;
+  }
+
+  .btn--proceed-to-pay {
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .checkout-summary ul li {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .checkout-summary ul li img {
+    margin-bottom: 10px;
+  }
+}

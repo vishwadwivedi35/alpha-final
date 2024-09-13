@@ -1,4 +1,3 @@
-// order.models.js
 const mongoose = require("mongoose");
 
 const orderSchema = new mongoose.Schema({
@@ -18,6 +17,10 @@ const orderSchema = new mongoose.Schema({
         ref: "Product",
         required: true,
       },
+      longDescription: {
+        type: String,
+        required: true,
+      },
       quantity: {
         type: Number,
         required: true,
@@ -34,15 +37,11 @@ const orderSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      longDescription: {
-        type: String,
-        required: true,
-      },
     },
   ],
   totalPrice: {
     type: Number,
-    // required: true,
+    required: true,
   },
   shippingAddress: {
     type: String,

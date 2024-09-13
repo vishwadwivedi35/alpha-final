@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import { UserContext } from "../context/UserContext";
+import CheckoutSummary from "./CheckoutSummary";
 import "../css/index.comp.css";
 
 const Cart = () => {
@@ -12,99 +13,33 @@ const Cart = () => {
   const [showAddressForm, setShowAddressForm] = useState(false);
   const [address, setAddress] = useState(null);
   const [showSignInPrompt, setShowSignInPrompt] = useState(false);
+  const [showCheckoutSummary, setShowCheckoutSummary] = useState(false); // To show CheckoutSummary after proceed
 
   const calculateTotalPrice = (price, quantity) => {
     return (price * quantity).toFixed(2);
   };
 
   const calculateOverallTotal = () => {
-    return cartItems
-      .reduce((total, item) => total + item.price * item.quantity, 0)
-      .toFixed(2);
+    return Number(
+      cartItems
+        .reduce((total, item) => total + item.price * item.quantity, 0)
+        .toFixed(2)
+    );
   };
 
-  const sendInvoiceEmail = async (email, order) => {
-    try {
-      const response = await fetch(
-        "https://api.alphamuscle.in/api/orders/send-invoice",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email, order }),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      console.log("Invoice email sent successfully");
-    } catch (error) {
-      console.error("Error sending invoice email:", error);
-    }
-  };
-
-  const handleProceedToCheckout = async () => {
+  const handleProceedToCheckout = () => {
     if (!sessionUserInfo || sessionUserInfo.length === 0) {
       setShowSignInPrompt(true);
       return;
     }
 
-    const order = {
-      user: sessionUserInfo[0].uid,
-      email: sessionUserInfo[0].email,
-      products: cartItems.map(
-        ({
-          _id,
-          quantity,
-          price,
-          name,
-          description,
-          longDescription,
-          selectedSize,
-          selectedFlavour,
-          selectedFreebie,
-        }) => ({
-          product: _id,
-          name,
-          description,
-          longDescription,
-          quantity,
-          price,
-          selectedSize,
-          selectedFlavour,
-          selectedFreebie,
-        })
-      ),
-      totalPrice: calculateOverallTotal(),
-      shippingAddress: address,
-      status: "Pending",
-    };
-
-    console.log("Order Payload:", order);
-
-    try {
-      const response = await fetch("https://api.alphamuscle.in/api/orders", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(order),
-      });
-
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      // Send invoice email
-      await sendInvoiceEmail(sessionUserInfo[0].email, order);
-
-      navigate("/checkout");
-    } catch (error) {
-      console.error("Error creating order:", error);
+    if (!address) {
+      setShowAddressForm(true);
+      return;
     }
+
+    // Show CheckoutSummary if user is logged in and address is set
+    setShowCheckoutSummary(true);
   };
 
   const handleAddressSubmit = () => {
@@ -194,6 +129,7 @@ const Cart = () => {
             })}
           </ul>
 
+          {/* Show address summary if already filled */}
           {address ? (
             <div className="address-summary">
               <h3>Shipping Address</h3>
@@ -201,7 +137,8 @@ const Cart = () => {
             </div>
           ) : null}
 
-          {!showAddressForm && (
+          {/* Toggle for showing the address form */}
+          {!showAddressForm && !address && (
             <div className="form__group">
               <button
                 className="btn btn--green"
@@ -212,6 +149,7 @@ const Cart = () => {
             </div>
           )}
 
+          {/* Address Form */}
           {showAddressForm && (
             <div className="row">
               <div className="address-form">
@@ -243,6 +181,7 @@ const Cart = () => {
             </div>
           )}
 
+          {/* Sign-in Prompt if user is not logged in */}
           {showSignInPrompt && (
             <div className="sign-in-prompt">
               <p className="heading-tertiary">
@@ -257,6 +196,7 @@ const Cart = () => {
             </div>
           )}
 
+          {/* Total and Proceed button */}
           <div className="cart-total">
             <span className="total-price">Total:</span>
             <span className="total-amount">₹{calculateOverallTotal()}</span>
@@ -264,9 +204,19 @@ const Cart = () => {
               onClick={handleProceedToCheckout}
               className="btn btn--green btn--proceed-to-checkout"
             >
-              Proceed to Checkout
+              Proceed
             </button>
           </div>
+
+          {/* Conditionally render CheckoutSummary after "Proceed" */}
+          {showCheckoutSummary && (
+            <CheckoutSummary
+              cartItems={cartItems}
+              totalPrice={calculateOverallTotal()}
+              address={address}
+              sessionUserInfo={sessionUserInfo}
+            />
+          )}
         </>
       )}
     </div>

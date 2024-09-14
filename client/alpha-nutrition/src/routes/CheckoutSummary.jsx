@@ -91,6 +91,50 @@ const CheckoutSummary = ({
   //   navigate("/checkout");
   // };
 
+  // const handleProceedToPay = async () => {
+  //   const order = {
+  //     user: sessionUserInfo[0].uid,
+  //     email: sessionUserInfo[0].email,
+  //     products: cartItems.map((item) => ({
+  //       product: item._id,
+  //       name: item.name,
+  //       quantity: item.quantity,
+  //       price: item.price,
+  //       selectedSize: item.selectedSize,
+  //       selectedFlavour: item.selectedFlavour,
+  //     })),
+  //     totalPrice: Number(finalPrice),
+  //     shippingAddress: address,
+  //     status: "Pending",
+  //   };
+
+  //   console.log("Order Payload:", order);
+
+  //   try {
+  //     // First, create an order in your backend
+  //     const { data } = await axios.post(
+  //       "https://api.alphamuscle.in/api/orders",
+  //       order
+  //     );
+
+  //     // Then, get the payment link from the backend
+  //     const paymentResponse = await axios.post(
+  //       "https://api.alphamuscle.in/api/payment",
+  //       {
+  //         amount: finalPrice,
+  //         buyer_email: sessionUserInfo[0].email,
+  //       }
+  //     );
+
+  //     const paymentUrl = paymentResponse.data.payment_request.longurl;
+
+  //     // Redirect the user to the payment page
+  //     window.location.href = paymentUrl;
+  //   } catch (error) {
+  //     console.error("Error creating order or initiating payment:", error);
+  //   }
+  // };
+
   const handleProceedToPay = async () => {
     const order = {
       user: sessionUserInfo[0].uid,
@@ -108,16 +152,11 @@ const CheckoutSummary = ({
       status: "Pending",
     };
 
-    console.log("Order Payload:", order);
-
     try {
-      // First, create an order in your backend
-      const { data } = await axios.post(
-        "https://api.alphamuscle.in/api/orders",
-        order
-      );
+      // Create an order in your backend
+      await axios.post("https://api.alphamuscle.in/api/orders", order);
 
-      // Then, get the payment link from the backend
+      // Get the payment link from the backend
       const paymentResponse = await axios.post(
         "https://api.alphamuscle.in/api/payment",
         {
@@ -126,7 +165,7 @@ const CheckoutSummary = ({
         }
       );
 
-      const paymentUrl = paymentResponse.data.payment_request.longurl;
+      const paymentUrl = paymentResponse.data.paymentUrl;
 
       // Redirect the user to the payment page
       window.location.href = paymentUrl;

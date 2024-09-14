@@ -30,6 +30,7 @@ app.use(
       "https://api.alphamuscle.in",
       "https://alphamuscle.in",
       "https://api.alphamuscle.in/api/products",
+      "https://api.alphamuscle.in/api/payment",
     ],
   })
 );

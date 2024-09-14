@@ -40,9 +40,9 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-const INSTAMOJO_API_URL = "https://api.instamojo.com/v2/";
+const INSTAMOJO_API_URL = "https://api.instamojo.com/v2/payment_requests/";
 const INSTAMOJO_TOKEN_URL = "https://api.instamojo.com/oauth2/token/";
-const INSTAMOJO_API_KEY = process.env.INSTAMOJO_API_KEY;
+const INSTAMOJO_CLIENT_ID = process.env.INSTAMOJO_CLIENT_ID;
 const INSTAMOJO_CLIENT_SECRET = process.env.INSTAMOJO_CLIENT_SECRET;
 
 let accessToken = null;
@@ -54,13 +54,16 @@ const getAccessToken = async () => {
       INSTAMOJO_TOKEN_URL,
       new URLSearchParams({
         grant_type: "client_credentials",
-        client_id: INSTAMOJO_API_KEY,
+
+        client_id: INSTAMOJO_CLIENT_ID,
         client_secret: INSTAMOJO_CLIENT_SECRET,
       }),
       {
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          accept: "application/json",
+          "content-type": "application/x-www-form-urlencoded",
         },
+        body: new URLSearchParams({ grant_type: "client_credentials" }),
       }
     );
 
@@ -90,28 +93,25 @@ router.post("/", async (req, res) => {
   }
 
   const paymentData = {
-    purpose: "E-commerce Order Payment",
     amount: amount,
+    purpose: "Product Purchase",
     buyer_email: buyer_email,
-    redirect_url: "https://api.alphamuscle.in/chekout",
+    redirect_url: "https://api.alphamuscle.in/payment-success",
   };
 
   try {
-    const response = await axios.post(
-      `${INSTAMOJO_API_URL}payment-requests/`,
-      paymentData,
-      {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await axios.post(`${INSTAMOJO_API_URL}`, paymentData, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        "Content-Type": "application/json",
+      },
+    });
 
     if (
       !response.data.payment_request ||
       !response.data.payment_request.longurl
     ) {
+      console.log(response.data.payment_request.longurl);
       console.error("Payment request creation failed: No longurl in response");
       return res
         .status(500)

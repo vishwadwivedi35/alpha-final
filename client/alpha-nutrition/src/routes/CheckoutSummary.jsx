@@ -153,21 +153,23 @@ const CheckoutSummary = ({
     };
 
     try {
-      // Create an order in your backend
+      // Step 1: Create an order in the backend
       await axios.post("https://api.alphamuscle.in/api/orders", order);
 
-      // Get the payment link from the backend
+      // Step 2: Get the payment link from the backend
       const paymentResponse = await axios.post(
         "https://api.alphamuscle.in/api/payment",
         {
           amount: finalPrice,
-          buyer_email: sessionUserInfo[0].email,
+          purpose: "Product Purchase",
+          email: sessionUserInfo[0].email,
+          redirect_url: "https://api.alphamuscle.in/payment-success",
+          send_email: true,
         }
       );
 
+      // Step 3: Redirect the user to the payment page
       const paymentUrl = paymentResponse.data.paymentUrl;
-
-      // Redirect the user to the payment page
       window.location.href = paymentUrl;
     } catch (error) {
       console.error("Error creating order or initiating payment:", error);

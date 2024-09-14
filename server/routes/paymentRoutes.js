@@ -11,15 +11,14 @@ Instamojo.setKeys(
 );
 Instamojo.isSandboxMode(true);
 
-router.post("/payment", (req, res) => {
-  const { amount, buyer_email, buyer_phone } = req.body;
+router.post("/", (req, res) => {
+  const { amount, buyer_email } = req.body;
 
   const paymentData = new Instamojo.PaymentData();
   paymentData.purpose = "E-commerce Order Payment";
   paymentData.amount = amount;
   paymentData.buyer_email = buyer_email;
-  paymentData.buyer_phone = buyer_phone;
-  paymentData.redirect_url = "https://alphamuscle.in/payment-success";
+  paymentData.redirect_url = "https://alphamuscle.in/chekout";
 
   Instamojo.createPayment(paymentData, (error, response) => {
     if (error) {
@@ -27,9 +26,7 @@ router.post("/payment", (req, res) => {
     } else {
       const responseObject = JSON.parse(response);
       const paymentUrl = responseObject.payment_request.longurl;
-      return res
-        .status(200)
-        .json({ payment_request: responseObject.payment_request });
+      return res.status(200).json({ paymentUrl });
     }
   });
 });

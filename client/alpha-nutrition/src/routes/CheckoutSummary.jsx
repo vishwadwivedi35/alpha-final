@@ -153,24 +153,26 @@ const CheckoutSummary = ({
     };
 
     try {
-      // Step 1: Create an order in the backend
+      console.log("Placing order in backend...");
       await axios.post("https://api.alphamuscle.in/api/orders", order);
+      console.log("Order placed successfully. Now generating payment URL...");
 
-      // Step 2: Get the payment link from the backend
       const paymentResponse = await axios.post(
         "https://api.alphamuscle.in/api/payment",
         {
           amount: finalPrice,
-          purpose: "Product Purchase",
-          email: sessionUserInfo[0].email,
-          redirect_url: "https://api.alphamuscle.in/payment-success",
-          send_email: true,
+          buyer_email: sessionUserInfo[0].email,
         }
       );
 
-      // Step 3: Redirect the user to the payment page
       const paymentUrl = paymentResponse.data.paymentUrl;
-      window.location.href = paymentUrl;
+
+      if (!paymentUrl) {
+        throw new Error("Payment URL is not provided by the server");
+      }
+
+      console.log("Redirecting to payment URL:", paymentUrl);
+      window.location.href = paymentUrl; // Redirect to the payment page
     } catch (error) {
       console.error("Error creating order or initiating payment:", error);
     }

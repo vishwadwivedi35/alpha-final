@@ -14,7 +14,7 @@
 //     }
 //     return {
 //       ...product,
-//       product: mongoose.Types.ObjectId(product.product),
+//       product: new mongoose.Types.ObjectId(product.product),
 //     };
 //   });
 
@@ -44,6 +44,8 @@
 //   createOrder,
 //   findOrderByPaymentRequestId,
 // };
+
+// orderController.js
 
 const Order = require("../models/order.models");
 const mongoose = require("mongoose");
@@ -83,11 +85,6 @@ const createOrder = async (orderData) => {
   return await newOrder.save();
 };
 
-async function findOrderByPaymentRequestId(payment_request_id) {
-  return await Order.findOne({ payment_request_id });
-}
-
 module.exports = {
   createOrder,
-  findOrderByPaymentRequestId,
 };

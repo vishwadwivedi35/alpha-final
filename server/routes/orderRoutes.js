@@ -6,10 +6,7 @@ const router = express.Router();
 const crypto = require("crypto");
 const mongoose = require("mongoose");
 
-const {
-  createOrder,
-  findOrderByPaymentRequestId,
-} = require("../controllers/orderController");
+const { createOrder } = require("../controllers/orderController");
 
 // Create a transporter object using the default SMTP transport
 const transporter = nodemailer.createTransport({
@@ -20,50 +17,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-router.post("/instamojo/webhook", async (req, res) => {
-  try {
-    const secret = process.env.INSTAMOJO_WEBHOOK_SECRET;
-    const instamojoSignature = req.headers["x-instamojo-signature"];
-
-    // Validate webhook signature
-    const payloadBody = JSON.stringify(req.body);
-    const generatedSignature = crypto
-      .createHmac("sha1", secret)
-      .update(payloadBody)
-      .digest("hex");
-
-    if (generatedSignature !== instamojoSignature) {
-      return res.status(400).send("Invalid Webhook Signature");
-    }
-
-    const { payment_request_id, payment_id, status } = req.body;
-
-    // Find the order associated with this payment_request_id
-    const order = await findOrderByPaymentRequestId(payment_request_id);
-    if (!order) {
-      return res.status(404).send("Order not found");
-    }
-
-    // Update order status based on webhook response
-    if (status === "Credit") {
-      order.status = "Paid"; // Payment successful
-      order.payment_id = payment_id;
-    } else {
-      order.status = "Failed"; // Payment failed
-    }
-
-    // Save the updated order to the database
-    await order.save();
-
-    // Send back success response to Instamojo
-    res.status(200).send("Webhook received and processed");
-  } catch (error) {
-    console.error("Error processing webhook:", error.message, error.stack);
-    res.status(500).send("Server error");
-  }
-});
-
-// Send Invoice Email
 router.post("/send-invoice", async (req, res) => {
   const { email, order } = req.body;
   console.log(req.body);

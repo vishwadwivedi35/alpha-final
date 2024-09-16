@@ -161,7 +161,7 @@ const CheckoutSummary = ({
         "https://api.alphamuscle.in/api/payment",
         {
           amount: finalPrice,
-          buyer_email: sessionUserInfo[0].email,
+          email: sessionUserInfo[0].email,
         }
       );
 

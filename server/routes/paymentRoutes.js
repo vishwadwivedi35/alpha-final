@@ -73,10 +73,10 @@ router.post("/", ensureValidAccessToken, async (req, res) => {
   const paymentData = {
     amount: amount,
     purpose: "Product Purchase",
-    buyer_email: buyer_email,
+    email: buyer_email,
     redirect_url: "https://api.alphamuscle.in/checkout",
     allow_repeated_payments: false,
-    send_email: true,
+    send_email: false,
   };
 
   try {

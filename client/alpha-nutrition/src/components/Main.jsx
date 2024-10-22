@@ -22,6 +22,7 @@ const Main = () => {
         const filteredProducts = data.filter((product) =>
           specificIds.includes(product._id)
         );
+        console.log(filteredProducts); // Check if the filtered products are correct
         setProducts(filteredProducts);
       } catch (error) {
         console.error("Error fetching products:", error);

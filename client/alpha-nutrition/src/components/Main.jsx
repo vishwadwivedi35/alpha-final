@@ -12,7 +12,7 @@ const Main = () => {
     "670fc469dfd15336dde00846",
     "66dc62037fcb843029a4b2a3",
     "670fbf58dfd15336dde00836",
-  ]; // Replace with actual product IDs
+  ]; // Replace with actual product IDs from mongo db -> browse collections.
 
   useEffect(() => {
     const fetchProducts = async () => {

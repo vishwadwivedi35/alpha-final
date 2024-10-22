@@ -9,9 +9,9 @@ import "../css/index.comp.css";
 const Main = () => {
   const [products, setProducts] = useState([]);
   const specificIds = [
-    "66c066da95772e5820ee15dd",
-    "66c0678495772e5820ee15df",
-    "66c06ac095772e5820ee15e9",
+    "670fc469dfd15336dde00846",
+    "66dc62037fcb843029a4b2a3",
+    "670fbf58dfd15336dde00836",
   ]; // Replace with actual product IDs
 
   useEffect(() => {

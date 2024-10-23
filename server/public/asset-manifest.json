@@ -1,14 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.a54ed9c2.css",
-    "main.js": "/static/js/main.c89cd19f.js",
+    "main.css": "/static/css/main.d3f1c014.css",
+    "main.js": "/static/js/main.ed9a488c.js",
     "static/js/453.be082c87.chunk.js": "/static/js/453.be082c87.chunk.js",
     "static/media/asa.png": "/static/media/asa.f67639b0747294ceba6a.png",
     "static/media/ALPHA-Logo-round-white.png": "/static/media/ALPHA-Logo-round-white.92d6e056a6d0a00ea93e.png",
-    "static/media/hydro-iso-2lbs-malai-kulfi.png": "/static/media/hydro-iso-2lbs-malai-kulfi.333c15b93f46a0bc3028.png",
     "static/media/ALPHA-Logo-round-black.png": "/static/media/ALPHA-Logo-round-black.022ac546c2089cdad86e.png",
-    "static/media/LEAN-1kg-COCOLATE.png": "/static/media/LEAN-1kg-COCOLATE.dad98593929d0060c69f.png",
-    "static/media/whey-plus-1kg-KKP.png": "/static/media/whey-plus-1kg-KKP.fff6eaedc3f909ce3956.png",
     "static/media/category2.png": "/static/media/category2.40cfc093e537d3994e93.png",
     "static/media/category3.png": "/static/media/category3.5b67916748676754645c.png",
     "static/media/category1.png": "/static/media/category1.22c8a60e3a76ddd6b3d7.png",
@@ -20,12 +17,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.a54ed9c2.css.map": "/static/css/main.a54ed9c2.css.map",
-    "main.c89cd19f.js.map": "/static/js/main.c89cd19f.js.map",
+    "main.d3f1c014.css.map": "/static/css/main.d3f1c014.css.map",
+    "main.ed9a488c.js.map": "/static/js/main.ed9a488c.js.map",
     "453.be082c87.chunk.js.map": "/static/js/453.be082c87.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a54ed9c2.css",
-    "static/js/main.c89cd19f.js"
+    "static/css/main.d3f1c014.css",
+    "static/js/main.ed9a488c.js"
   ]
 }

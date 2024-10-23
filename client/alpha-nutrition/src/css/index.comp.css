@@ -564,19 +564,19 @@ body {
   border-top-right-radius: 3px;
 }
 .card__picture--1 {
-  background-image: url("../img/whey-plus-1kg-KKP.png");
+  background-image: url("https://res.cloudinary.com/alphamuscle/image/upload/v1725536099/LEAN_GAINER_3KG_KKP_bvjlqm.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 .card__picture--2 {
-  background-image: url("../img/LEAN-1kg-COCOLATE.png");
+  background-image: url("https://res.cloudinary.com/alphamuscle/image/upload/v1729074286/whey_plus_2kg_chocolate_1_cp3fm2.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 .card__picture--3 {
-  background-image: url("../img/hydro-iso-2lbs-malai-kulfi.png");
+  background-image: url("https://res.cloudinary.com/alphamuscle/image/upload/v1725442228/hydro_iso_4lbs_MK_z7k6iw.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

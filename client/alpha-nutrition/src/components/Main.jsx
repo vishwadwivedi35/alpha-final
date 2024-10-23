@@ -130,6 +130,8 @@ const Main = () => {
             <div className="col-1-of-3" key={product._id}>
               <div className="card">
                 <div className={`card__side card__side--front`}>
+                  {" "}
+                  {/*IMPORTANT change the picture from index.comp.css*/}
                   <div className={`card__picture card__picture--${index + 1}`}>
                     &nbsp;
                   </div>

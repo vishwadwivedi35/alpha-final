@@ -294,7 +294,7 @@ const CheckoutSummary = ({
             placeholder="Enter coupon code"
             className="coupon-input"
           />
-          <button onClick={applyCoupon} className="btn btn--green">
+          <button onClick={applyCoupon} className="btn btn--green btn--coupon">
             Apply Coupon
           </button>
         </div>

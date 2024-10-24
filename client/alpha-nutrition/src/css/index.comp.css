@@ -2240,7 +2240,7 @@ body {
   border: none;
   border-radius: 0;
   border-bottom: 1px solid grey;
-  margin: 25px 0;
+  margin: 2px 0;
 }
 .group .form-input:focus {
   outline: none;
@@ -2295,6 +2295,7 @@ body {
 .button-container.google-sign-in {
   background-color: #4285f4;
   color: white;
+  padding: 0rem;
 }
 .button-container.google-sign-in:hover {
   background-color: #357ae8;
@@ -4172,6 +4173,7 @@ input[type="password"]:focus,
 input[type="text"]:focus {
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+  color: #3d3d3d;
 }
 
 /* Fantastic Button Styles */
@@ -4855,5 +4857,151 @@ button:hover {
   button {
     padding: 0.7rem 1.3rem;
     font-size: 1.1rem;
+  }
+}
+
+.sign-up-container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  max-width: 400px;
+  margin: auto;
+  color: white;
+}
+
+.sign-up-container h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: rgba(255, 0, 100, 0.8);
+}
+
+.sign-up-container span {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sign-up-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-up-container form input {
+  padding: 12px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.sign-up-container form input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 50, 50, 0.8);
+}
+
+button[type="submit"] {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 123, 0, 0.9),
+    rgba(255, 0, 100, 0.9)
+  );
+  border: none;
+  padding: 15px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s ease;
+  margin-bottom: 10px;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 100, 0.9),
+    rgba(255, 123, 0, 0.9)
+  );
+  transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+  .sign-up-container {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .sign-up-container h2 {
+    font-size: 22px;
+  }
+
+  .sign-up-container form input {
+    font-size: 16px;
+  }
+
+  button[type="submit"] {
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+  .sign-up-container {
+    padding: 25px;
+    max-width: 90%;
+  }
+
+  .sign-up-container h2 {
+    font-size: 24px;
+  }
+
+  .sign-up-container form input {
+    font-size: 16px;
+  }
+
+  button[type="submit"] {
+    padding: 14px;
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .sign-up-container {
+    padding: 30px;
+    max-width: 400px;
+  }
+
+  .sign-up-container h2 {
+    font-size: 26px;
+  }
+
+  .sign-up-container form input {
+    font-size: 17px;
+  }
+
+  button[type="submit"] {
+    padding: 15px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sign-up-container {
+    max-width: 450px;
+  }
+
+  .sign-up-container h2 {
+    font-size: 28px;
+  }
+
+  .sign-up-container form input {
+    font-size: 18px;
+  }
+
+  button[type="submit"] {
+    padding: 2px;
+    font-size: 19px;
   }
 }

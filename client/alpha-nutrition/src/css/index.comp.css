@@ -4942,7 +4942,7 @@ button[type="submit"]:hover {
   }
 
   button[type="submit"] {
-    padding: 12px;
+    padding: 2px;
     font-size: 16px;
   }
 }
@@ -4962,7 +4962,7 @@ button[type="submit"]:hover {
   }
 
   button[type="submit"] {
-    padding: 14px;
+    padding: 6px;
     font-size: 17px;
   }
 }

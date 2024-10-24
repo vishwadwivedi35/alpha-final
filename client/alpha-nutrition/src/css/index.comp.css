@@ -5005,3 +5005,64 @@ button[type="submit"]:hover {
     font-size: 19px;
   }
 }
+
+/* Styles for the COD checkbox container */
+.cod-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Styles for the COD checkbox itself */
+.cod-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.cod-checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #28a745; /* Green color matching your theme */
+  border-radius: 5px;
+  position: relative;
+  margin-right: 10px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.cod-checkbox input[type="checkbox"]:checked {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.cod-checkbox input[type="checkbox"]:checked::before {
+  content: "✔";
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  top: -4px;
+  left: 4px;
+}
+
+.cod-checkbox input[type="checkbox"]:hover {
+  border-color: #218838;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.4);
+}
+
+/* Label styling to match the theme */
+.cod-label {
+  font-weight: 500;
+  color: #333;
+  user-select: none;
+}
+
+/* Optional: You can add a subtle animation */
+.cod-checkbox input[type="checkbox"]:checked {
+  transform: scale(1.1);
+}

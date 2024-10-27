@@ -299,7 +299,13 @@ const SingleProduct = () => {
                   {product.mrp && (
                     <p className="heading-tertiary u-margin-bottom-small single-product__mrp">
                       MRP:{" "}
-                      <span style={{ textDecoration: "line-through" }}>
+                      <span
+                        style={{
+                          textDecoration: "line-through",
+                          color: "black",
+                          fontSize: "large",
+                        }}
+                      >
                         ₹{product.mrp}
                       </span>
                     </p>

@@ -2134,7 +2134,7 @@ body {
   right: 0.7rem;
 }
 .line {
-  margin: 0 8rem 4rem 8rem;
+  margin: 0 1rem 4rem 1rem;
   border: 1px solid grey;
   box-sizing: border-box;
   padding: 0;
@@ -3263,8 +3263,9 @@ body {
 
 .single-product__pricing {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 2rem;
 }
 

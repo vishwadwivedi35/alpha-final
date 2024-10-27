@@ -116,7 +116,7 @@ const CheckoutSummary = ({
 
       {/* COD Toggle */}
       <div className="cod-toggle">
-        <label>
+        <label className="cod-toggle_label">
           <input
             type="checkbox"
             checked={codSelected}

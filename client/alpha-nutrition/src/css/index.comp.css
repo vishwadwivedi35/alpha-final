@@ -5184,3 +5184,8 @@ button[type="submit"]:hover {
     transform: translateY(0);
   }
 }
+
+.cod-toggle_label {
+  font-size: 2rem;
+  color: grey;
+}

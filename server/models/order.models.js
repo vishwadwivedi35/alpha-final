@@ -10,6 +10,14 @@ const orderSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  phone: {
+    type: String,
+    required: true, // Set as required if you need phone number for all orders
+  },
+  paymentMethod: {
+    type: String,
+    required: true, // Can adjust required based on use-case
+  },
   products: [
     {
       product: {

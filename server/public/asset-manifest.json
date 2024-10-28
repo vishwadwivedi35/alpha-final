@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b32fd117.css",
-    "main.js": "/static/js/main.ff4d2284.js",
+    "main.js": "/static/js/main.f6a04efd.js",
     "static/js/453.be082c87.chunk.js": "/static/js/453.be082c87.chunk.js",
     "static/media/asa.png": "/static/media/asa.f67639b0747294ceba6a.png",
     "static/media/ALPHA-Logo-round-white.png": "/static/media/ALPHA-Logo-round-white.92d6e056a6d0a00ea93e.png",
@@ -18,11 +18,11 @@
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
     "main.b32fd117.css.map": "/static/css/main.b32fd117.css.map",
-    "main.ff4d2284.js.map": "/static/js/main.ff4d2284.js.map",
+    "main.f6a04efd.js.map": "/static/js/main.f6a04efd.js.map",
     "453.be082c87.chunk.js.map": "/static/js/453.be082c87.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b32fd117.css",
-    "static/js/main.ff4d2284.js"
+    "static/js/main.f6a04efd.js"
   ]
 }

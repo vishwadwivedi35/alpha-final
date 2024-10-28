@@ -12,6 +12,7 @@ const Cart = () => {
 
   const [showAddressForm, setShowAddressForm] = useState(false);
   const [address, setAddress] = useState(null);
+  const [phoneNumber, setPhoneNumber] = useState(""); // State to hold the phone number
   const [showSignInPrompt, setShowSignInPrompt] = useState(false);
   const [showCheckoutSummary, setShowCheckoutSummary] = useState(false); // To show CheckoutSummary after proceed
 
@@ -44,8 +45,8 @@ const Cart = () => {
 
   const handleAddressSubmit = () => {
     const addressData = document.getElementById("addressTextarea").value;
-    if (addressData) {
-      setAddress(addressData);
+    if (addressData && phoneNumber) {
+      setAddress(`${addressData}, Contact: ${phoneNumber}`);
       setShowAddressForm(false);
     }
   };
@@ -154,20 +155,29 @@ const Cart = () => {
             <div className="row">
               <div className="address-form">
                 <div className="u-margin-bottom-medium">
-                  <h2 className="heading-secondary">
-                    Add Shipping Address With Phone Number
-                  </h2>
+                  <h2 className="heading-secondary">Add Shipping Address</h2>
                 </div>
                 <div className="form__group">
                   <textarea
                     id="addressTextarea"
                     className="form__input"
-                    placeholder="Please Provide Your Contact number"
+                    placeholder="Enter Your Address"
                     required
                   ></textarea>
                   <label htmlFor="addressTextarea" className="form__label">
                     Address
                   </label>
+                </div>
+                <div className="form__group">
+                  <input
+                    type="tel"
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    className="form__input"
+                    placeholder="Enter Your Phone Number"
+                    required
+                  />
+                  <label className="form__label">Phone Number</label>
                 </div>
                 <div className="form__group">
                   <button

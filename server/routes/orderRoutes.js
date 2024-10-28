@@ -5,6 +5,9 @@ const nodemailer = require("nodemailer");
 const router = express.Router();
 const crypto = require("crypto");
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const { createOrder } = require("../controllers/orderController");
 
@@ -12,8 +15,8 @@ const { createOrder } = require("../controllers/orderController");
 const transporter = nodemailer.createTransport({
   service: "Gmail", // You can use other services
   auth: {
-    user: "alphamuscle4@gmail.com",
-    pass: "cdaf wnai xzzm zoxn",
+    user: "process.env.EMAIL_USER",
+    pass: "process.env.EMAIL_PASS",
   },
 });
 
@@ -51,6 +54,8 @@ router.post("/send-invoice", async (req, res) => {
       <div style="font-family: Arial, sans-serif; color: #333;">
         <h1 style="text-align: center; color: #4CAF50;">Thank you for your order!</h1>
         <p><strong>User Email:</strong> ${order.email}</p>
+        <p><strong>Phone Number:</strong> ${order.phone}</p> <!-- Add phone number -->
+    <p><strong>Payment Method:</strong> ${order.paymentMethod}</p> <!-- Add payment method -->
         <h2>Order Details:</h2>
         <table style="width: 100%; border-collapse: collapse;">
           <thead>
@@ -73,7 +78,9 @@ router.post("/send-invoice", async (req, res) => {
   };
 
   try {
+    console.log("Sending email to:", email);
     await transporter.sendMail(mailOptions);
+    console.log("Email sent successfully.");
     res.status(200).send("Invoice email sent successfully");
   } catch (error) {
     console.error("Error sending invoice email:", error.message, error.stack); // log the error message and stack trace

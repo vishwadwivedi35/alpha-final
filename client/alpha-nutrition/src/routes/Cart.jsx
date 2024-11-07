@@ -221,6 +221,7 @@ const Cart = () => {
           {/* Conditionally render CheckoutSummary after "Proceed" */}
           {showCheckoutSummary && (
             <CheckoutSummary
+              phone={phoneNumber}
               cartItems={cartItems}
               totalPrice={calculateOverallTotal()}
               address={address}

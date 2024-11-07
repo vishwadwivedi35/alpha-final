@@ -5117,6 +5117,7 @@ button[type="submit"]:hover {
   font-weight: bold;
   box-shadow: 0px 4px 10px rgba(0, 255, 123, 0.4);
   transition: background 0.3s ease, transform 0.3s ease;
+  width: 2%;
 }
 
 .btn--coupon:hover {

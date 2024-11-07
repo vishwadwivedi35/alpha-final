@@ -5,6 +5,7 @@ import "../css/index.comp.css";
 
 const CheckoutSummary = ({
   cartItems,
+  phone,
   totalPrice,
   address,
   sessionUserInfo,
@@ -47,6 +48,7 @@ const CheckoutSummary = ({
     const order = {
       user: sessionUserInfo[0].uid,
       email: sessionUserInfo[0].email,
+      phone: phone,
       products: cartItems.map((item) => ({
         product: item._id,
         name: item.name,
@@ -136,7 +138,7 @@ const CheckoutSummary = ({
             placeholder="Enter coupon code"
             className="coupon-input"
           />
-          <button onClick={applyCoupon} className="btn btn--green btn--coupon">
+          <button onClick={applyCoupon} className="btn btn--coupon">
             Apply Coupon
           </button>
         </div>

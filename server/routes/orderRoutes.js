@@ -11,12 +11,11 @@ dotenv.config();
 
 const { createOrder } = require("../controllers/orderController");
 
-// Create a transporter object using the default SMTP transport
 const transporter = nodemailer.createTransport({
-  service: "Gmail", // You can use other services
+  service: "gmail",
   auth: {
-    user: "process.env.EMAIL_USER",
-    pass: "process.env.EMAIL_PASS",
+    user: "vishwadwivedi22@gmail.com",
+    pass: "octm jznd egsm uopl",
   },
 });
 
@@ -24,7 +23,6 @@ router.post("/send-invoice", async (req, res) => {
   const { email, order } = req.body;
   console.log(req.body);
 
-  // Construct the email content
   const productDetails = order.products
     .map(
       (product) => `
@@ -47,7 +45,7 @@ router.post("/send-invoice", async (req, res) => {
     .join("");
 
   const mailOptions = {
-    from: "alphamuscle4@gmail.com",
+    from: "vishwadwivedi22@gmail.com",
     to: email,
     subject: "Your Order Invoice",
     html: `
@@ -83,7 +81,7 @@ router.post("/send-invoice", async (req, res) => {
     console.log("Email sent successfully.");
     res.status(200).send("Invoice email sent successfully");
   } catch (error) {
-    console.error("Error sending invoice email:", error.message, error.stack); // log the error message and stack trace
+    console.error("Error sending invoice email:", error.message, error.stack);
     res.status(500).json({
       error: "Error sending invoice email",
       message: error.message,
@@ -93,17 +91,17 @@ router.post("/send-invoice", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  console.log("Received order:", req.body); // Log the incoming request
+  console.log("Received order:", req.body);
 
   try {
     const order = await createOrder(req.body);
     res.status(201).json(order);
   } catch (error) {
-    console.error("Error creating order:", error.message, error.stack); // Log the error with details
+    console.error("Error creating order:", error.message, error.stack);
     res.status(500).json({
       error: "Error creating order",
       message: error.message,
-      stack: error.stack, // Include stack trace for detailed debugging
+      stack: error.stack,
     });
   }
 });

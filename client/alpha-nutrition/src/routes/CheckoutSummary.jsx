@@ -16,11 +16,10 @@ const CheckoutSummary = ({
   const [codSelected, setCodSelected] = useState(false);
   const navigate = useNavigate();
 
-  // When a coupon is applied, COD is deselected and final price is recalculated
   const applyCoupon = () => {
-    setCodSelected(false); // Automatically unselect COD when applying a coupon
+    setCodSelected(false);
 
-    if (couponCode === "ALPHA10") {
+    if (couponCode === "ALPHA10" || "ADI25") {
       const discountAmount = (totalPrice * 0.1).toFixed(2);
       setDiscount(discountAmount);
       setFinalPrice(Number((totalPrice - discountAmount).toFixed(2)));
@@ -30,16 +29,13 @@ const CheckoutSummary = ({
     }
   };
 
-  // COD Toggle - Ensure no extra charges when COD is selected
   const handleCODToggle = () => {
-    setCodSelected(!codSelected); // Toggle COD selection
+    setCodSelected(!codSelected);
 
     if (!codSelected) {
-      // If COD is selected, no delivery charge and final price remains same
       setDiscount(0);
-      setFinalPrice(totalPrice); // Set final price to be same as total price
+      setFinalPrice(totalPrice);
     } else {
-      // Reapply coupon if COD is deselected
       setFinalPrice(Number(totalPrice) - discount);
     }
   };
@@ -50,8 +46,9 @@ const CheckoutSummary = ({
       email: sessionUserInfo[0].email,
       phone: phone,
       products: cartItems.map((item) => ({
-        product: item._id,
+        description: item.description,
         name: item.name,
+        product: item._id,
         quantity: item.quantity,
         price: item.price,
         selectedSize: item.selectedSize,
@@ -62,6 +59,7 @@ const CheckoutSummary = ({
       status: "Pending",
       paymentMethod: codSelected ? "COD" : "Online",
     };
+    console.log("Cart Items in CheckoutSummary:", cartItems);
 
     try {
       console.log("Placing order in backend...");
@@ -69,11 +67,9 @@ const CheckoutSummary = ({
       console.log("Order placed successfully.");
 
       if (codSelected) {
-        // If COD is selected, redirect directly to success page
         console.log("COD selected. Order placed without online payment.");
         navigate("/checkout");
       } else {
-        // Proceed to payment gateway if not COD
         console.log("Generating payment URL...");
         const paymentResponse = await axios.post(
           "https://api.alphamuscle.in/api/payment",
@@ -90,11 +86,20 @@ const CheckoutSummary = ({
         }
 
         console.log("Redirecting to payment URL:", paymentUrl);
-        window.location.href = paymentUrl; // Redirect to payment page
+        window.location.href = paymentUrl;
       }
     } catch (error) {
       console.error("Error creating order or initiating payment:", error);
     }
+
+    const emailResponse = await axios.post(
+      "https://api.alphamuscle.in/api/orders/send-invoice",
+      {
+        email: sessionUserInfo[0].email,
+        order: order,
+      }
+    );
+    console.log("Invoice email sent successfully:", emailResponse.data);
   };
 
   return (

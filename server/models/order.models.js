@@ -25,6 +25,10 @@ const orderSchema = new mongoose.Schema({
         ref: "Product",
         required: true,
       },
+      description: {
+        type: String,
+        required: true,
+      },
       name: {
         type: String,
         required: true,

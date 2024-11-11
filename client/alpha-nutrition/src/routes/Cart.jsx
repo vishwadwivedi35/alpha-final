@@ -94,6 +94,7 @@ const Cart = () => {
                         onClick={() =>
                           updateCartItem(
                             item._id,
+                            item.name,
                             item.quantity - 1,
                             item.selectedSize,
                             item.selectedFlavour,
@@ -108,6 +109,7 @@ const Cart = () => {
                         onClick={() =>
                           updateCartItem(
                             item._id,
+                            item.name,
                             item.quantity + 1,
                             item.selectedSize,
                             item.selectedFlavour,

@@ -13,20 +13,29 @@ const createOrder = async (orderData) => {
     status,
   } = orderData;
 
-  // Log incoming data for debugging
   console.log("Order data received:", orderData);
 
   const validatedProducts = products.map((product) => {
     if (!mongoose.Types.ObjectId.isValid(product.product)) {
       throw new Error(`Invalid product ID: ${product.product}`);
     }
+
+    console.log("Product details:", {
+      name: product.name,
+      description: product.description,
+    });
+
     return {
-      ...product,
       product: new mongoose.Types.ObjectId(product.product),
+      name: product.name,
+      description: product.description,
+      quantity: product.quantity,
+      price: product.price,
+      selectedSize: product.selectedSize,
+      selectedFlavour: product.selectedFlavour,
     };
   });
 
-  // Log the validated products for debugging
   console.log("Validated products:", validatedProducts);
 
   const newOrder = new Order({
@@ -40,7 +49,6 @@ const createOrder = async (orderData) => {
     status,
   });
 
-  // Log the new order object before saving
   console.log("New order to save:", newOrder);
 
   return await newOrder.save();
